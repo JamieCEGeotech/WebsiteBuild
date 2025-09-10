@@ -1,0 +1,224 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #222;
+}
+header {
+    background: #538cd3;
+    color: #fff;
+    padding: 1.5em 0;
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 2em;
+}
+.header-inner img {
+    height: 60px;
+    position: absolute;
+    left: 2em;
+}
+nav {
+    margin-top: 1em;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1em;
+    font-weight: bold;
+}
+/* --- Modernised Hero Banner --- */
+.hero-banner {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    min-height: 340px;
+    max-height: 480px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 340px;
+    max-height: 480px;
+    display: block;
+    filter: brightness(0.65);
+}
+.hero-banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Change padding to match .hero-content max-width and horizontal centering */
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero-banner-content-inner {
+    padding-left: 2em;
+    padding-right: 2em;
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;   /* Center the inner content horizontally */
+    margin-right: auto;
+}
+.hero-banner-content h1 {
+    margin: 0 0 0.3em 0;
+    font-size: 2.8em;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+    letter-spacing: 1px;
+}
+.hero-banner-content h2 {
+    margin: 0 0 1em 0;
+    font-size: 1.6em;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    font-weight: 400;
+}
+@media (max-width: 900px) {
+    .hero-banner-content-inner {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .hero-banner-content {
+        padding: 2em 1em 1.5em 1em;
+    }
+    .hero-banner-content h1 {
+        font-size: 2em;
+    }
+    .hero-banner-content h2 {
+        font-size: 1.1em;
+    }
+}
+/* --- End Modernised Hero Banner --- */
+.hero {
+    background: #fff;
+    padding: 3em 1em 2em 1em;
+}
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+.section {
+    max-width: 1400px;
+    margin: 2em auto;
+    background: transparent;
+    padding: 2em 2em 0 2em;
+    border-radius: 0;
+    box-shadow: none;
+}
+.services-flex {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    padding: 1em 0 0 0;
+    flex-wrap: wrap;
+}
+.service-box {
+    flex: 1 1 400px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 320px;
+    max-width: 600px;
+    border-left: 2px solid #f0f0f0;
+}
+.service-box:first-child {
+    border-left: none;
+}
+.service-box h2 {
+    color: #538cd3;
+    margin-top: 0;
+}
+.service-box ul {
+    text-align: left;
+    margin: 0 0 0 1.5em;
+}
+.service-box .contact-btn {
+    text-align: center;
+    margin-top: 2em;
+}
+.service-box .contact-btn a {
+    background: #538cd3;
+    color: #fff;
+    padding: 0.75em 2em;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+#contact > div {
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+#contact form {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+#contact input, #contact textarea {
+    background: #f6f8fa;
+}
+footer {
+    background: #538cd3;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+@media (max-width: 1100px) {
+    .section {
+        max-width: 98vw;
+        padding: 1em 0.5em 0 0.5em;
+    }
+    .header-inner {
+        max-width: 98vw;
+        padding: 0 1em;
+    }
+}
+@media (max-width: 900px) {
+    .services-flex {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .service-box {
+        max-width: 100%;
+        border-left: none;
+        border-top: 2px solid #f0f0f0;
+        padding: 2em 0 0 0;
+    }
+    .service-box:first-child {
+        border-top: none;
+    }
+    .header-inner img {
+        position: static;
+        margin-right: 1em;
+    }
+    .header-inner {
+        justify-content: flex-start;
+    }
+}

@@ -4,168 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CE Geotech</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #fff; /* Changed from #f6f8fa to white for a continuous look */
-            color: #222;
-        }
-        header {
-            background: #538cd3;
-            color: #fff;
-            padding: 1.5em 0;
-        }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 1600px;
-            margin: 0 auto;
-            position: relative;
-            padding: 0 2em;
-        }
-        .header-inner img {
-            height: 60px;
-            position: absolute;
-            left: 2em;
-        }
-        nav {
-            margin-top: 1em;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1em;
-            font-weight: bold;
-        }
-        .hero {
-            background: #fff; /* Changed from #e6eef7 to white */
-            padding: 3em 1em 2em 1em;
-        }
-        .hero h1 {
-            margin-top: 0;
-            font-size: 2.5em;
-            color: #538cd3;
-        }
-        .hero p {
-            font-size: 1.2em;
-            color: #333;
-        }
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .section {
-            max-width: 1400px;
-            margin: 2em auto;
-            background: transparent; /* Remove white box background */
-            padding: 2em 2em 0 2em; /* Remove bottom padding for flow */
-            border-radius: 0; /* Remove rounded corners */
-            box-shadow: none; /* Remove shadow */
-        }
-        .services-flex {
-            display: flex;
-            gap: 2em;
-            justify-content: center;
-            padding: 1em 0 0 0; /* Remove bottom padding */
-            flex-wrap: wrap;
-        }
-        .service-box {
-            flex: 1 1 400px;
-            background: transparent; /* Remove box background */
-            border-radius: 0;
-            box-shadow: none;
-            padding: 0 2em 2em 2em; /* Only side and bottom padding for spacing */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-width: 320px;
-            max-width: 600px;
-            border-left: 2px solid #f0f0f0; /* subtle divider */
-        }
-        .service-box:first-child {
-            border-left: none;
-        }
-        .service-box h2 {
-            color: #538cd3;
-            margin-top: 0;
-        }
-        .service-box ul {
-            text-align: left;
-            margin: 0 0 0 1.5em;
-        }
-        .service-box .contact-btn {
-            text-align: center;
-            margin-top: 2em;
-        }
-        .service-box .contact-btn a {
-            background: #538cd3;
-            color: #fff;
-            padding: 0.75em 2em;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-        }
-        /* Contact section styles */
-        #contact > div {
-            background: transparent !important; /* Remove background from contact info box */
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            padding: 0 !important;
-        }
-        #contact form {
-            background: transparent;
-            border-radius: 0;
-            box-shadow: none;
-            padding: 0;
-        }
-        #contact input, #contact textarea {
-            background: #f6f8fa;
-        }
-        /* Footer styles remain */
-        footer {
-            background: #538cd3;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            margin-top: 2em;
-        }
-        @media (max-width: 1100px) {
-            .section {
-                max-width: 98vw;
-                padding: 1em 0.5em 0 0.5em;
-            }
-            .header-inner {
-                max-width: 98vw;
-                padding: 0 1em;
-            }
-        }
-        @media (max-width: 900px) {
-            .services-flex {
-                flex-direction: column;
-                gap: 1em;
-            }
-            .service-box {
-                max-width: 100%;
-                border-left: none;
-                border-top: 2px solid #f0f0f0;
-                padding: 2em 0 0 0;
-            }
-            .service-box:first-child {
-                border-top: none;
-            }
-            .header-inner img {
-                position: static;
-                margin-right: 1em;
-            }
-            .header-inner {
-                justify-content: flex-start;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -181,9 +20,19 @@
             </div>
         </div>
     </header>
-    <section class="hero" id="home">
-        <h1 style="margin-bottom: 0.3em; text-align: center;">CE Geotech</h1>
-        <h2 style="margin-top: 0; margin-bottom: 1em; text-align: center; color: #538cd3;">Cutting Edge Geotechnical</h2>
+
+    <!-- Modernised Full-Width Hero Banner -->
+    <section class="hero-banner" id="home">
+        <img src="Files/Truck With excavator.jpg" alt="Truck with Excavator">
+        <div class="hero-banner-content">
+            <div class="hero-banner-content-inner">
+                <h1>CE Geotech</h1>
+                <h2>Cutting Edge Geotechnical</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero">
         <div class="hero-content">
             <p>
                 CE Geotech specialise in the assessment and validation of hydraulically bound soils for ground engineering applications.
