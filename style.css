@@ -153,38 +153,77 @@ nav a:focus {
     display: flex;
     gap: 2em;
     justify-content: center;
-    padding: 1em 0 0 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;      /* Prevent wrapping */
+    overflow-x: auto;       /* Allow horizontal scroll if needed */
+    width: 100%;
 }
 .service-box {
-    flex: 1 1 400px;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0 2em 2em 2em;
+    flex: 1 1 650px;   /* Sets the default width to 650px */
+    min-width: 650px;  /* Prevents shrinking below 650px */
+    max-width: 650px;  /* Prevents growing above 650px */
+    width: 650px;      /* Ensures the box is always 650px wide */
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    display: flex;
+}
+.service-box-front,
+.service-box-back {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-width: 320px;
-    max-width: 600px;
-    border-left: 2px solid #f0f0f0;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s, visibility 0.4s;
+    padding: 2em;
+    box-sizing: border-box;
 }
-.service-box:first-child {
-    border-left: none;
+.service-box-front {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
 }
-.service-box h2 {
+.service-box-back {
+    background: #fff;
+    color: #222;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    overflow-y: visible;
+}
+.service-box:hover .service-box-front,
+.service-box:focus-within .service-box-front {
+    opacity: 0;
+    visibility: hidden;
+}
+.service-box:hover .service-box-back,
+.service-box:focus-within .service-box-back {
+    opacity: 1;
+    visibility: visible;
+}
+.service-box-back h2 {
     color: #538cd3;
     margin-top: 0;
 }
-.service-box ul {
-    text-align: left;
-    margin: 0 0 0 1.5em;
-}
-.service-box .contact-btn {
-    text-align: center;
+.service-box-back .contact-btn {
     margin-top: 2em;
 }
-.service-box .contact-btn a {
+.service-box-back .contact-btn a {
     background: #538cd3;
     color: #fff;
     padding: 0.75em 2em;
@@ -347,14 +386,37 @@ footer a:focus {
 /* Top blue bar above header */
 .top-bar {
     width: 100vw;
-    height: 45px; /* Increased from 40px to 45px */
+    height: 45px;
     background: #538cd3;
     margin: 0;
-    padding: 0;
+    padding: 0; /* Remove right padding here */
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.top-bar-contact-btn {
+    background: #fff;
+    color: #222;
+    border: none;
+    border-radius: 0; /* Square edges */
+    padding: 0.5em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    margin-right: 18.7em; /* This matches the section/header padding */
+}
+
+.top-bar-contact-btn:hover,
+.top-bar-contact-btn:focus {
+    background: #222;
+    color: #fff;
 }
 
 /* Footer: blue area for bottom sentences */
@@ -395,12 +457,14 @@ footer a:focus {
     }
 }
 @media (max-width: 900px) {
-    .services-flex {
+    /* .services-flex {
         flex-direction: column;
         gap: 1em;
-    }
+    } */
     .service-box {
+        min-width: 0;
         max-width: 100%;
+        width: 100%;
         border-left: none;
         border-top: 2px solid #f0f0f0;
         padding: 2em 0 0 0;
