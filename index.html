@@ -15,7 +15,20 @@
             background: #003366;
             color: #fff;
             padding: 1.5em 0;
-            text-align: center;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 2em;
+        }
+        .header-inner img {
+            height: 60px;
+            position: absolute;
+            left: 2em;
         }
         nav {
             margin-top: 1em;
@@ -29,7 +42,6 @@
         .hero {
             background: #e6eef7;
             padding: 3em 1em 2em 1em;
-            text-align: center;
         }
         .hero h1 {
             margin-top: 0;
@@ -40,30 +52,58 @@
             font-size: 1.2em;
             color: #333;
         }
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
         .section {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 2em auto;
             background: #fff;
-            padding: 2em;
+            padding: 2em 2em;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .services {
+        .services-flex {
             display: flex;
-            flex-wrap: wrap;
             gap: 2em;
             justify-content: center;
+            padding: 1em 0;
+            flex-wrap: wrap;
         }
-        .service {
-            flex: 1 1 250px;
+        .service-box {
+            flex: 1 1 400px;
             background: #f6f8fa;
-            padding: 1.5em;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 320px;
+            max-width: 600px;
         }
-        .service h3 {
+        .service-box h2 {
             color: #003366;
+            margin-top: 0;
+        }
+        .service-box ul {
+            text-align: left;
+            margin: 0 0 0 1.5em;
+        }
+        .service-box .contact-btn {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .service-box .contact-btn a {
+            background: #003366;
+            color: #fff;
+            padding: 0.75em 2em;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
         }
         footer {
             background: #003366;
@@ -72,19 +112,39 @@
             padding: 1em 0;
             margin-top: 2em;
         }
-        @media (max-width: 700px) {
-            .services {
+        @media (max-width: 1100px) {
+            .section {
+                max-width: 98vw;
+                padding: 1em 0.5em;
+            }
+            .header-inner {
+                max-width: 98vw;
+                padding: 0 1em;
+            }
+        }
+        @media (max-width: 900px) {
+            .services-flex {
                 flex-direction: column;
                 gap: 1em;
+            }
+            .service-box {
+                max-width: 100%;
+            }
+            .header-inner img {
+                position: static;
+                margin-right: 1em;
+            }
+            .header-inner {
+                justify-content: flex-start;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div style="display: flex; align-items: center; justify-content: center; max-width: 1100px; margin: 0 auto; position: relative;">
-            <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" style="height: 60px; position: absolute; left: 0;">
-            <div>
+        <div class="header-inner">
+            <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo">
+            <div style="margin: 0 auto;">
                 <h2 style="margin: 0;">CE Geotech</h2>
                 <nav>
                     <a href="#home">Home</a>
@@ -94,10 +154,10 @@
             </div>
         </div>
     </header>
-    <section class="hero" id="home" style="text-align: center;">
-        <h1 style="margin-bottom: 0.3em;">CE Geotech</h1>
-        <h2 style="margin-top: 0; margin-bottom: 1em;">Cutting Edge Geotechnical</h2>
-        <div style="max-width: 700px; margin: 0 auto; text-align: left;">
+    <section class="hero" id="home">
+        <h1 style="margin-bottom: 0.3em; text-align: center;">CE Geotech</h1>
+        <h2 style="margin-top: 0; margin-bottom: 1em; text-align: center;">Cutting Edge Geotechnical</h2>
+        <div class="hero-content">
             <p>
                 CE Geotech specialise in the assessment and validation of hydraulically bound soils for ground engineering applications.
             </p>
@@ -110,38 +170,37 @@
         </div>
     </section>
     <section class="section" id="services">
-        <div style="display: flex; gap: 2em; justify-content: center; padding: 1em 0; flex-wrap: wrap;">
+        <div class="services-flex">
             <!-- Left Box -->
-            <div style="flex: 1 1 340px; background: #f6f8fa; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); padding: 2em; display: flex; flex-direction: column; justify-content: space-between; min-width: 300px; max-width: 500px;">
-                <h2 style="color: #003366; margin-top: 0;">Site Testing Services</h2>
-                <p style="flex: 1;">
+            <div class="service-box">
+                <h2>Site Testing Services</h2>
+                <p>
                     Utilising our expertise and experience gained over many years, we offer a fully integrated materials testing service in all aspects of soil stabilisation works from initial site visit, sampling, trial pitting and DCP testing through to earthworks control and validation testing during the construction phase.
                     <br><br>
                     Through years of experience on site, our engineers not only provide timely and robust data for stabilisation control, but can also assist with the interpretation of challenging site conditions.
                 </p>
-                <div style="text-align: center; margin-top: 2em;">
-                    <a href="#contact" style="background: #003366; color: #fff; padding: 0.75em 2em; border-radius: 4px; text-decoration: none; font-weight: bold; display: inline-block;">Contact Us</a>
+                <div class="contact-btn">
+                    <a href="#contact">Contact Us</a>
                 </div>
             </div>
             <!-- Right Box -->
-            <div style="flex: 1 1 340px; background: #f6f8fa; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); padding: 2em; display: flex; flex-direction: column; justify-content: space-between; min-width: 300px; max-width: 500px;">
-                <h2 style="color: #003366; margin-top: 0;">Laboratory Mix Design Studies</h2>
-                <p style="flex: 1;">
+            <div class="service-box">
+                <h2>Laboratory Mix Design Studies</h2>
+                <p>
                     Project specific mix design studies can be tailored to meet project specifications;
                     <br><br>
                     <strong>Materials Characterisation</strong>
-                    <br><br>
-                    <ul style="text-align: left; margin: 0 0 0 1.5em;">
-                        <li>Optimum Moisture Content Maximum Dry Density (OMC-MDD) – BS EN 13286-4:2003, BS 1377-4:1990</li>
-                        <li>Moisture Condition Value (MCV Range) – BS EN 13286-46:2003</li>
-                        <li>BRE-SD1 Sulphate Suite</li>
-                        <li>Particle Size Distribution (PSD) Wet/Dry BS 1377-2:1990</li>
-                        <li>Plasticity Index – BS 1377-2: 1990</li>
-                        <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
-                    </ul>
                 </p>
-                <div style="text-align: center; margin-top: 2em;">
-                    <a href="#contact" style="background: #003366; color: #fff; padding: 0.75em 2em; border-radius: 4px; text-decoration: none; font-weight: bold; display: inline-block;">Contact Us</a>
+                <ul>
+                    <li>Optimum Moisture Content Maximum Dry Density (OMC-MDD) – BS EN 13286-4:2003, BS 1377-4:1990</li>
+                    <li>Moisture Condition Value (MCV Range) – BS EN 13286-46:2003</li>
+                    <li>BRE-SD1 Sulphate Suite</li>
+                    <li>Particle Size Distribution (PSD) Wet/Dry BS 1377-2:1990</li>
+                    <li>Plasticity Index – BS 1377-2: 1990</li>
+                    <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
+                </ul>
+                <div class="contact-btn">
+                    <a href="#contact">Contact Us</a>
                 </div>
             </div>
         </div>
