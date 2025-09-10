@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CE Geotech</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Top blue bar -->
+    <div class="top-bar"></div>
+
     <header>
     <div class="header-inner">
         <div class="header-logo">
-            <img src="Files\Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo">
+            <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo">
         </div>
         <nav class="header-nav">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </div>
 </header>
@@ -80,42 +84,7 @@
             </div>
         </div>
     </section>
-    <section class="section" id="contact">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4em; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
-            <!-- Contact Form (Left) -->
-            <div style="flex: 1 1 350px; min-width: 320px; max-width: 480px; display: flex; flex-direction: column; justify-content: flex-start;">
-                <h2>Contact Us</h2>
-                <form action="mailto:enquiries@cegeotech.co.uk" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 1em;">
-                    <label for="name" style="font-weight: bold;">Name</label>
-                    <input type="text" id="name" name="name" required style="padding: 0.5em; border-radius: 4px; border: 1px solid #ccc;">
-
-                    <label for="email" style="font-weight: bold;">Email Address</label>
-                    <input type="email" id="email" name="email" required style="padding: 0.5em; border-radius: 4px; border: 1px solid #ccc;">
-
-                    <label for="tel" style="font-weight: bold;">Telephone Number</label>
-                    <input type="tel" id="tel" name="tel" style="padding: 0.5em; border-radius: 4px; border: 1px solid #ccc;">
-
-                    <label for="comment" style="font-weight: bold;">Comment</label>
-                    <textarea id="comment" name="comment" rows="4" required style="padding: 0.5em; border-radius: 4px; border: 1px solid #ccc;"></textarea>
-
-                    <button type="submit" style="background: #538cd3; color: #fff; padding: 0.75em 2em; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Send</button>
-                </form>
-            </div>
-            <!-- Contact Info (Right) -->
-            <div style="flex: 1 1 350px; min-width: 320px; max-width: 480px; display: flex; flex-direction: column; justify-content: flex-start;">
-                <div style="text-align: left; margin-top: 4.5em;">
-                    <strong>CE Geotech<br>
-                    CEG Laboratories<br>
-                    Ashover, Derbyshire<br>
-                    United Kingdom<br>
-                    S45 0DX</strong>
-                    <br><br>
-                    Tel: (+44) 01629 584 416<br>
-                    <a href="mailto:enquiries@cegeotech.co.uk" style="color: #538cd3; font-weight: bold;">enquiries@cegeotech.co.uk</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  
     <!-- News Banner Section -->
     <section class="news-banner" id="news">
     <div class="news-banner-inner">
@@ -143,7 +112,7 @@
                     <img src="Files\UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" style="max-width: 120px; max-height: 60px;">
                 </div>
                 <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 0.5em;">21581</div>
-                <a href="#" style="color: #fff; text-decoration: underline; font-weight: bold;">Click here to view</a>
+                <a href="Files/21581Testing Multiple.pdf" style="color: #fff; text-decoration: underline; font-weight: bold;">Click here to view</a>
             </div>
             <!-- Contact Us (Right) -->
             <div style="flex: 1 1 260px; min-width: 220px; text-align: left;">
@@ -151,7 +120,7 @@
                 <div style="margin-bottom: 0.5em;">
                     <div>T: (+44) 01629 584 416</div>
                     <div>
-                        E: <a href="mailto:enquiries@cegeotech.co.uk" style="color: #fff; text-decoration: underline;">enquiries@cegeotech.co.uk</a>
+                        E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a>
                     </div>
                 </div>
                 <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" style="display: inline-block; margin-top: 0.5em;">
@@ -159,11 +128,11 @@
                 </a>
             </div>
         </div>
-        <div style="border-top: 1px solid rgba(255,255,255,0.2); margin-top: 2em; padding-top: 1em; text-align: center; font-size: 1em;">
+        <div class="footer-bottom">
             CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
-        </div>
-        <div style="text-align: center; margin-top: 1em; font-size: 0.95em;">
-            &copy; 2025 CE Geotech. All rights reserved.
+            <div class="copyright">
+                &copy; 2025 CE Geotech. All rights reserved.
+            </div>
         </div>
     </footer>
 </body>

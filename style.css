@@ -1,34 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     margin: 0;
     background: #fff;
     color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 115px; /* 45px for .top-bar + 70px for header */
 }
 header {
     background: #fff; /* Changed from #538cd3 to white */
     color: #222;      /* Changed from #fff to dark for contrast */
     padding: 1.5em 0;
+    position: fixed;
+    top: 45px; /* match new .top-bar height */
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .header-inner {
     display: flex;
-    align-items: center;
+    align-items: center;      /* Ensures vertical centering */
     justify-content: space-between;
-    max-width: 1400px;      /* Match the .section max-width for text */
+    max-width: 1400px;
     margin: 0 auto;
     position: relative;
-    padding: 0 2em;         /* Match the horizontal padding of .section and .hero-content */
-    height: 80px;
+    padding: 0 2em;
+    height: 70px; /* Reduced from 80px to 70px */
     box-sizing: border-box;
 }
-.header-logo {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-}
+.header-logo,
 .header-nav {
-    flex: 0 0 auto;
     display: flex;
-    align-items: center;
+    align-items: center;      /* Ensures children are also vertically centered */
+    height: 100%;
 }
 .header-inner img {
     height: 60px;
@@ -36,19 +42,19 @@ header {
     display: block;
 }
 nav {
-    margin-top: 1em;
+    margin-top: 0;
 }
 nav a {
-    color: #538cd3; /* Use your brand blue for menu links */
+    color: #222; /* Default font color is black */
     text-decoration: none;
     margin: 0 1em;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
     transition: color 0.2s;
 }
 nav a:hover,
 nav a:focus {
-    color: #222; /* Slightly darker on hover for accessibility */
+    color: #538cd3; /* Blue on hover */
 }
 /* --- Modernised Hero Banner --- */
 .hero-banner {
@@ -188,10 +194,53 @@ nav a:focus {
     display: inline-block;
 }
 #contact > div {
-    background: transparent !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 0 !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+#contact > div > div {
+    flex: 1 1 0;
+    min-width: 400px;
+    max-width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+#contact form {
+    width: 100%;
+    max-width: 400px;
+}
+
+#contact > div > div > div {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    #contact > div {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    #contact > div > div {
+        max-width: 100%;
+        min-width: 0;
+        align-items: stretch;
+    }
+    #contact form,
+    #contact > div > div > div {
+        max-width: 100%;
+        text-align: left;
+    }
 }
 #contact form {
     background: transparent;
@@ -202,13 +251,16 @@ nav a:focus {
 #contact input, #contact textarea {
     background: #f6f8fa;
 }
+
 footer {
     background: #fff;
     color: #222;
     text-align: center;
     padding: 1em 0;
-    margin-top: 2em;
+    margin-top: 0;
     border-top: 2px solid #eee;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 footer a {
     color: #538cd3;
@@ -229,13 +281,16 @@ footer a:focus {
 }
 .news-banner-inner {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch; /* Ensures both columns fill the full height */
     gap: 2em;
+    height: 200px; /* Set the height of the banner */
 }
 .news-banner-left {
     flex: 1 1 0;
     max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .news-banner-left h2 {
     color: #538cd3;
@@ -249,24 +304,23 @@ footer a:focus {
 .news-banner-right {
     flex: 1 1 0;
     max-width: 50%;
+    min-width: 220px;
+    height: 100%;
+    background: url('Files/002.jpg') center center/cover no-repeat, #e0e6ed;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     position: relative;
-    min-width: px;
-    height: 180px;
-    /* Remove gap and image box, use background instead */
-    background: url('Files/news-image.jpg') center center/cover no-repeat, #e0e6ed;
-    border-radius: 8px;
-    /* Optional: add overlay for better button contrast */
+    padding: 0;      /* Ensure no padding */
+    margin: 0;       /* Ensure no margin */
     overflow: hidden;
 }
-.news-banner-image {
-    display: none; /* Hide the image box */
-}
 .news-banner-btn {
-    position: relative;
-    margin-left: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
     background: #538cd3;
     color: #fff;
@@ -277,17 +331,11 @@ footer a:focus {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s;
-    /* Center button horizontally and vertically */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
 }
 .news-banner-btn:hover,
 .news-banner-btn:focus {
     background: #3a6ca8;
 }
-/* Optional: overlay for readability */
 .news-banner-right::before {
     content: "";
     position: absolute;
@@ -295,6 +343,42 @@ footer a:focus {
     background: rgba(83,140,211,0.18);
     z-index: 1;
     border-radius: 8px;
+}
+/* Top blue bar above header */
+.top-bar {
+    width: 100vw;
+    height: 45px; /* Increased from 40px to 45px */
+    background: #538cd3;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Footer: blue area for bottom sentences */
+.footer-bottom {
+    background: #538cd3;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    font-size: 1em;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 0;
+    padding-bottom: 1em;
+}
+.footer-bottom .copyright {
+    margin-top: 1em;
+    font-size: 0.95em;
 }
 @media (max-width: 1100px) {
     .section {
@@ -335,13 +419,13 @@ footer a:focus {
         flex-direction: column;
         align-items: stretch;
         gap: 1.5em;
+        height: auto;
     }
     .news-banner-left,
     .news-banner-right {
         max-width: 100%;
     }
     .news-banner-right {
-        justify-content: center;
         height: 140px;
         background-size: cover;
     }
