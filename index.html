@@ -3,51 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My GitHub Web Page</title>
+    <title>Geotech Solutions</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 2em;
+            margin: 0;
             background: #f6f8fa;
-            color: #24292f;
+            color: #222;
         }
         header {
+            background: #003366;
+            color: #fff;
+            padding: 1.5em 0;
             text-align: center;
-            margin-bottom: 2em;
         }
-        main {
-            max-width: 600px;
-            margin: auto;
+        nav {
+            margin-top: 1em;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: bold;
+        }
+        .hero {
+            background: #e6eef7;
+            padding: 3em 1em 2em 1em;
+            text-align: center;
+        }
+        .hero h1 {
+            margin-top: 0;
+            font-size: 2.5em;
+            color: #003366;
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .section {
+            max-width: 900px;
+            margin: 2em auto;
             background: #fff;
             padding: 2em;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        a {
-            color: #0366d6;
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+        }
+        .service {
+            flex: 1 1 250px;
+            background: #f6f8fa;
+            padding: 1.5em;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+        .service h3 {
+            color: #003366;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+        @media (max-width: 700px) {
+            .services {
+                flex-direction: column;
+                gap: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My GitHub Page</h1>
-        <p>This is a simple website hosted with GitHub Pages.</p>
+        <h2>Geotech Solutions</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-    <main>
-        <h2>About</h2>
-        <p>
-            You can use GitHub Pages to host static websites directly from your GitHub repository.
-        </p>
-        <h2>Get Started</h2>
-        <ol>
-            <li>Create a repository named <code>username.github.io</code>.</li>
-            <li>Add your HTML files (like this one).</li>
-            <li>Enable GitHub Pages in the repository settings.</li>
-            <li>Visit <code>https://username.github.io</code> to see your site!</li>
-        </ol>
-        <p>
-            Learn more at the <a href="https://pages.github.com/" target="_blank">GitHub Pages documentation</a>.
-        </p>
-    </main>
+    <section class="hero" id="home">
+        <h1>Welcome to Geotech Solutions</h1>
+        <p>Professional geotechnical and environmental services for your next project.</p>
+    </section>
+    <section class="section" id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Site Investigation</h3>
+                <p>Comprehensive ground investigation and reporting for construction and development.</p>
+            </div>
+            <div class="service">
+                <h3>Environmental Assessments</h3>
+                <p>Expert analysis and advice on environmental risks and compliance.</p>
+            </div>
+            <div class="service">
+                <h3>Consultancy</h3>
+                <p>Tailored geotechnical consultancy to support your project from start to finish.</p>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:info@geotechsolutions.com">info@geotechsolutions.com</a></p>
+        <p>Phone: 01234 567890</p>
+        <p>Address: 123 Geotech Lane, Engineering City, UK</p>
+    </section>
+    <footer>
+        &copy; 2025 Geotech Solutions. All rights reserved.
+    </footer>
 </body>
 </html>
