@@ -8,6 +8,13 @@ body {
     flex-direction: column;
     padding-top: 115px; /* 45px for .top-bar + 70px for header */
 }
+
+main.section {
+    flex: 1 0 auto;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
 header {
     background: #fff; /* Changed from #538cd3 to white */
     color: #222;      /* Changed from #fff to dark for contrast */
@@ -198,13 +205,19 @@ nav a:focus {
     visibility: visible;
 }
 .service-box-back {
-    background: #fff;
-    color: #222;
+    background: rgba(0,0,0,0.45); /* match the overlay of .service-box-front */
+    color: #fff;
     z-index: 2;
     opacity: 0;
     visibility: hidden;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    overflow-y: visible;
+    box-shadow: none;
+    overflow-y: visible; /* Remove scroll bar unless truly needed */
+    transition: opacity 0.4s, visibility 0.4s;
+}
+
+.service-box-back h2 {
+    color: #fff;
+    margin-top: 0;
 }
 .service-box:hover .service-box-front,
 .service-box:focus-within .service-box-front {
@@ -216,10 +229,7 @@ nav a:focus {
     opacity: 1;
     visibility: visible;
 }
-.service-box-back h2 {
-    color: #538cd3;
-    margin-top: 0;
-}
+
 .service-box-back .contact-btn {
     margin-top: 2em;
 }
@@ -494,4 +504,35 @@ footer a:focus {
         height: 140px;
         background-size: cover;
     }
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.23,1.01,.32,1);
+    will-change: opacity, transform;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: none;
+}
+.hero-slideshow {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-slideshow .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s;
+    left: 0; top: 0;
+}
+
+.hero-slideshow .slide.active {
+    opacity: 1;
+    z-index: 1;
 }
