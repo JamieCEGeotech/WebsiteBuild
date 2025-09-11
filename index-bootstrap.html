@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CE Geotech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top blue bar -->
+    <div class="top-bar d-flex justify-content-end align-items-center" style="height:45px;">
+        <button class="top-bar-contact-btn btn btn-primary rounded-pill me-5">Contact us</button>
+    </div>
+
+    <header>
+        <div class="header-inner container d-flex align-items-center justify-content-between" style="height:90px;">
+            <div class="header-logo">
+                <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" loading="eager" style="max-height:70px;">
+            </div>
+            <nav class="header-nav d-flex gap-3">
+                <a class="nav-link px-2" href="index-bootstrap.html">Home</a>
+                <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">Laboratory Mix Design Studies</a>
+                <a class="nav-link px-2" href="contact.html">Contact</a>
+                <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner with Bootstrap Carousel -->
+    <section class="hero-banner fade-in p-0 m-0" id="home" style="position:relative;">
+        <div id="heroCarousel" class="carousel slide w-100" data-bs-ride="carousel"
+         style="height:calc(100vh - 135px); min-height:400px; position:relative;">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="Files/Truck With excavator.jpg" class="d-block w-100 h-100" alt="Truck with Excavator" loading="eager" style="object-fit:cover;">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="Files/IMG_0130.JPG" class="d-block w-100 h-100" alt="Site Testing" loading="lazy" style="object-fit:cover;">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="Files/IMG_0094.JPG" class="d-block w-100 h-100" alt="Laboratory" loading="lazy" style="object-fit:cover;">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <!-- Overlay content, centered and padded via .container -->
+            <div class="hero-banner-content position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="pointer-events:none;">
+                <div class="container">
+                  <div class="hero-banner-content-inner text-center text-white bg-dark bg-opacity-50 p-4 rounded">
+                      <h1>CE Geotech: Experts in Hydraulically Bound Soil Solutions for Ground Engineering Projects</h1>
+                      <h2>From site characterisation to final validation, CE Geotech ensures seamless project delivery with precision, innovation, and unmatched technical expertise.</h2>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Paragraph -->
+    <section class="section fade-in py-5" id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center mb-4">
+                Cutting Edge Geotechnical
+            </h2>
+            <p>
+                CE Geotech specialise in the assessment and validation of hydraulically bound soils for ground engineering applications.
+            </p>
+            <p>
+                At CE Geotech we deal with projects. This approach ensures our clients receive the highest level of continuity and project management, all the way through a stabilisation project lifecycle; from initial site characterisation, laboratory mix design study phases, and project sign-off through on-site control and validation testing.
+            </p>
+            <p>
+                If you would like more information on CE Geotech’s capabilities, please download our 
+                <a href="Files/CE GeoTech Cap Stat Overview 12pp v3.indd.pdf" class="fw-bold text-primary" target="_blank">capability statement</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE CARDS -->
+    <section class="section fade-in py-5" id="services">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Site Testing Services Card -->
+          <div class="col-12 col-lg-6 d-flex justify-content-center">
+            <div class="service-fade-card">
+              <div class="service-fade-front" style="background-image: url('Files/IMG_0130.JPG');">
+                <div class="service-fade-overlay"></div>
+                <h2>Site Testing Services</h2>
+              </div>
+              <div class="service-fade-back" style="background-image: url('Files/IMG_0130.JPG');">
+                <div class="service-fade-overlay"></div>
+                <h2>Site Testing Services</h2>
+                <p>
+                  Utilising our expertise and experience gained over many years, we offer a fully integrated materials testing service in all aspects of soil stabilisation works from initial site visit, sampling, trial pitting and DCP testing through to earthworks control and validation testing during the construction phase.
+                  <br><br>
+                  Through years of experience on site, our engineers not only provide timely and robust data for stabilisation control, but can also assist with the interpretation of challenging site conditions.
+                </p>
+                <a href="LaboratoryMixDesignStudies.html" class="service-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <!-- Laboratory Mix Design Studies Card -->
+          <div class="col-12 col-lg-6 d-flex justify-content-center">
+            <div class="service-fade-card">
+              <div class="service-fade-front" style="background-image: url('Files/IMG_0094.JPG');">
+                <div class="service-fade-overlay"></div>
+                <h2>Laboratory Mix Design Studies</h2>
+              </div>
+              <div class="service-fade-back" style="background-image: url('Files/IMG_0094.JPG');">
+                <div class="service-fade-overlay"></div>
+                <h2>Laboratory Mix Design Studies</h2>
+                <p>
+                  Project specific mix design studies can be tailored to meet project specifications;
+                  <br><br>
+                  <strong>Materials Characterisation</strong>
+                </p>
+                <ul style="text-align: left;">
+                  <li>Optimum Moisture Content Maximum Dry Density (OMC-MDD) – BS EN 13286-4:2003, BS 1377-4:1990</li>
+                  <li>Moisture Condition Value (MCV Range) – BS EN 13286-46:2003</li>
+                  <li>BRE-SD1 Sulphate Suite</li>
+                  <li>Particle Size Distribution (PSD) Wet/Dry BS 1377-2:1990</li>
+                  <li>Plasticity Index – BS 1377-2: 1990</li>
+                  <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
+                </ul>
+                <a href="LaboratoryMixDesignStudies.html" class="service-btn">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS BANNER -->
+    <section class="news-banner fade-in py-5" id="news">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Column -->
+          <div class="col-md-8">
+            <h2>News</h2>
+            <p>Keep up to date with the latest news, updates, and project highlights from CE Geotech. Stay informed about our innovations, achievements, and industry insights.</p>
+          </div>
+          <!-- Right Column -->
+          <div class="col-md-4 text-md-end">
+            <button class="btn btn-primary">View All News</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Maps Embed -->
+    <div class="fade-in" style="width: 100%; margin: 3em 0 0 0;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9566.316934463834!2d-1.4925063!3d53.1715886!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x882ba5afaae03d08!2sCEG%20Laboratories!5e0!3m2!1sen!2suk!4v1621333115318!5m2!1sen!2suk" 
+            width="100%" 
+            height="450" 
+            style="border:0; display:block;" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <footer class="mt-5">
+        <div class="container py-4">
+            <div class="row align-items-start">
+                <!-- Company Logo (Left) -->
+                <div class="col-md-4 text-center text-md-end mb-3 mb-md-0 pt-md-3">
+                    <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" class="img-fluid" style="max-width: 200px; max-height: 60px;">
+                </div>
+                <!-- Our Accreditations (Center) -->
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h3 class="mb-2">Our Accreditations</h3>
+                    <div class="mb-2">
+                        <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" class="img-fluid" style="max-width: 120px; max-height: 60px;">
+                    </div>
+                    <div class="fw-bold mb-2">21581</div>
+                    <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
+                </div>
+                <!-- Contact Us (Right) -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="mb-2">Contact Us</h3>
+                    <div class="mb-2">
+                        <div>T: (+44) 01629 584 416</div>
+                        <div>
+                            E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block mt-2">
+                        <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" style="width: 32px; height: 32px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center py-2">
+            CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
+            <div class="copyright">
+                &copy; 2025 CE Geotech. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="fade-in.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
