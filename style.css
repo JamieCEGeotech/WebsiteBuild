@@ -53,7 +53,6 @@ nav {
 }
 nav a {
     color: #222; /* Default font color is black */
-    text-decoration: none;
     margin: 0 1em;
     font-weight: bold;
     font-size: 1em;
@@ -62,6 +61,31 @@ nav a {
 nav a:hover,
 nav a:focus {
     color: #538cd3; /* Blue on hover */
+    text-decoration: none;
+}
+.header-nav a {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none !important;
+    padding: 0.5em 0.5em; /* Reduced horizontal padding */
+}
+.header-nav a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 2px;
+    background: #538cd3;
+    border-radius: 2px;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: opacity 0.2s, transform 0.3s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+}
+.header-nav a:hover::after,
+.header-nav a:focus::after {
+    opacity: 1 !important;
+    transform: scaleX(1) !important;
 }
 /* --- Modernised Hero Banner --- */
 .hero-banner {
@@ -313,7 +337,7 @@ footer {
 }
 footer a {
     color: #538cd3;
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: bold;
 }
 footer a:hover,
@@ -426,7 +450,7 @@ footer a:focus {
 
 .top-bar-contact-btn:hover,
 .top-bar-contact-btn:focus {
-    background: #222;
+    background: #3a6ca8;
     color: #fff;
 }
 
@@ -535,4 +559,19 @@ footer a:focus {
 .hero-slideshow .slide.active {
     opacity: 1;
     z-index: 1;
+}
+
+a {
+    text-decoration: none;
+}
+.header-nav {
+    z-index: 1001;
+    position: relative;
+}
+
+/* Match the news banner button hover effect for Learn More buttons */
+.contact-btn a:hover,
+.contact-btn a:focus {
+    background: #3a6ca8;
+    color: #fff;
 }
