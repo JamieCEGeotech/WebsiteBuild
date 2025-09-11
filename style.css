@@ -317,6 +317,7 @@ footer a:focus {
     padding: 2em 2em;
     border-radius: 0;
     box-sizing: border-box;
+    margin-bottom: 2.5em; /* add space above the footer */
 }
 .news-banner-inner {
     display: flex;
