@@ -563,7 +563,7 @@ footer a:focus {
   width: 48px;         /* Smaller size */
   height: auto;
   z-index: 2000; /* Ensure it stays on top */
-  opacity: 100%;
+  opacity: 100;
   pointer-events: none;
   max-width: none;     /* Prevent scaling up */
 }
