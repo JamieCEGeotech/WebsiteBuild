@@ -100,7 +100,8 @@ nav a:focus {
     pointer-events: none;
 }
 .header-nav a:hover::after,
-.header-nav a:focus::after {
+.header-nav a:focus::after,
+.header-nav a.active::after {
     opacity: 1 !important;
     transform: scaleX(1) !important;
 }
