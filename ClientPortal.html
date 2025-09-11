@@ -4,69 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Client Portal - CE Geotech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Top blue bar -->
-    <div class="top-bar">
-        <button class="top-bar-contact-btn">Contact us</button>
+    <div class="top-bar d-flex justify-content-end align-items-center" style="height:45px;">
+        <button class="top-bar-contact-btn btn btn-primary rounded-pill me-5">Contact us</button>
     </div>
 
     <header>
-        <div class="header-inner">
+        <div class="header-inner container d-flex align-items-center justify-content-between" style="height:90px;">
             <div class="header-logo">
-                <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo">
+                <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" loading="eager" style="max-height:70px;">
             </div>
-            <nav class="header-nav">
-                <a href="index.html">Home</a>
-                <a href="LaboratoryMixDesignStudies.html">Laboratory Mix Design Studies</a>
-                <a href="contact.html">Contact</a>
-                <a href="ClientPortal.html">Client Portal</a>
+            <nav class="header-nav d-flex gap-3">
+                <a class="nav-link px-2" href="index.html">Home</a>
+                <a class="nav-link px-2" href="LaboratoryMixDesignStudies.html">Laboratory Mix Design Studies</a>
+                <a class="nav-link px-2" href="contact.html">Contact</a>
+                <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
             </nav>
         </div>
     </header>
 
-    <main style="padding: 0; margin: 0;">
-        <iframe src="https://cegeotech.giscloud.com" width="100%" height="800" style="border: none;" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </main>
-
-<footer>
-    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 3em; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; padding: 0em 1em 1em 1em;">
-        <!-- Company Logo (Left) -->
-        <div style="flex: 1 1 260px; min-width: 220px; text-align: right; padding-top: 1.5em;">
-            <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" style="max-width: 500px; max-height: 100px; vertical-align: top;">
-        </div>
-        <!-- Our Accreditations (Center) -->
-        <div style="flex: 1 1 300px; min-width: 260px; text-align: center;">
-            <h3 style="margin-bottom: 0.5em;">Our Accreditations</h3>
-            <div style="margin-bottom: 0.5em;">
-                <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" style="max-width: 120px; max-height: 60px;">
-            </div>
-            <div style="font-size: 1.2em; font-weight: bold; margin-bottom: 0.5em;">21581</div>
-            <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
-        </div>
-        <!-- Contact Us (Right) -->
-        <div style="flex: 1 1 260px; min-width: 220px; text-align: left;">
-            <h3 style="margin-bottom: 0.5em;">Contact Us</h3>
-            <div style="margin-bottom: 0.5em;">
-                <div>T: (+44) 01629 584 416</div>
-                <div>
-                    E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a>
+    <main class="section fade-in py-5" id="client-portal">
+        <div class="container">
+            <h1 class="mb-4 text-center">Client Portal</h1>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="ratio ratio-16x9 rounded shadow">
+                        <iframe src="https://cegeotech.giscloud.com"
+                                title="CE Geotech Client Portal"
+                                allowfullscreen
+                                style="border:0;"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
                 </div>
             </div>
-            <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" style="display: inline-block; margin-top: 0.5em;">
-                <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" style="width: 32px; height: 32px;">
-            </a>
         </div>
-    </div>
-    <div class="footer-bottom">
-        CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
-        <div class="copyright">
-            &copy; 2025 CE Geotech. All rights reserved.
+    </main>
+
+    <footer class="mt-5">
+        <div class="container py-4">
+            <div class="row align-items-start">
+                <!-- Company Logo (Left) -->
+                <div class="col-md-4 text-center text-md-end mb-3 mb-md-0 pt-md-3">
+                    <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" class="img-fluid" style="max-width: 500px; max-height: 100px;">
+                </div>
+                <!-- Our Accreditations (Center) -->
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h3 class="mb-2">Our Accreditations</h3>
+                    <div class="mb-2">
+                        <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" class="img-fluid" style="max-width: 120px; max-height: 60px;">
+                    </div>
+                    <div class="fw-bold mb-2">21581</div>
+                    <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
+                </div>
+                <!-- Contact Us (Right) -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="mb-2">Contact Us</h3>
+                    <div class="mb-2">
+                        <div>T: (+44) 01629 584 416</div>
+                        <div>
+                            E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block mt-2">
+                        <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" style="width: 32px; height: 32px;">
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+        <div class="footer-bottom text-center py-2">
+            CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
+            <div class="copyright">
+                &copy; 2025 CE Geotech. All rights reserved.
+            </div>
+        </div>
+    </footer>
     <script src="fade-in.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
