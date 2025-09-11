@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 115px; /* 45px for .top-bar + 70px for header */
+    padding-top: 135px; /* 45px for .top-bar + 90px for header */
 }
 
 main.section {
@@ -18,13 +18,13 @@ main.section {
 header {
     background: #fff; /* Changed from #538cd3 to white */
     color: #222;      /* Changed from #fff to dark for contrast */
-    padding: 1.5em 0;
     position: fixed;
     top: 45px; /* match new .top-bar height */
     left: 0;
     width: 100vw;
     z-index: 999;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    height: 90px; /* 2 units */
 }
 .header-inner {
     display: flex;
@@ -34,7 +34,7 @@ header {
     margin: 0 auto;
     position: relative;
     padding: 0 2em;
-    height: 70px; /* Reduced from 80px to 70px */
+    height: 90px; /* match header height */
     box-sizing: border-box;
 }
 .header-logo,
@@ -44,7 +44,7 @@ header {
     height: 100%;
 }
 .header-inner img {
-    height: 60px;
+    height: 70px; /* slightly larger for new header height */
     margin-right: 0;
     display: block;
 }
@@ -421,7 +421,7 @@ footer a:focus {
 /* Top blue bar above header */
 .top-bar {
     width: 100vw;
-    height: 45px;
+    height: 45px; /* 1 unit */
     background: #538cd3;
     margin: 0;
     padding: 0; /* Remove right padding here */
@@ -438,7 +438,7 @@ footer a:focus {
     background: #fff;
     color: #222;
     border: none;
-    border-radius: 0; /* Square edges */
+    border-radius: 6px; /* Rounded corners */
     padding: 0.5em 1.5em;
     font-size: 1em;
     font-weight: bold;
