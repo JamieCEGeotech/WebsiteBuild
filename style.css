@@ -555,3 +555,22 @@ footer a:focus {
   z-index: 2;
   position: relative;
 }
+
+.carousel-overlay-ukas {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;         /* Smaller size */
+  height: auto;
+  z-index: 2000; /* Ensure it stays on top */
+  opacity: 100%;
+  pointer-events: none;
+  max-width: none;     /* Prevent scaling up */
+}
+@media (max-width: 768px) {
+  .carousel-overlay-ukas {
+    width: 32px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
