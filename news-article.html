@@ -11,18 +11,75 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-    <!-- ...existing header/nav code (copy from your other pages)... -->
+    <!-- Top blue bar -->
+    <div class="top-bar d-flex justify-content-end align-items-center" style="height:45px;">
+        <a href="contact.html" class="top-bar-contact-btn btn btn-primary rounded-pill me-5">Contact us</a>
+    </div>
+
+    <header>
+        <div class="header-inner container d-flex align-items-center justify-content-between" style="height:90px;">
+            <div class="header-logo">
+                <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" loading="eager" style="max-height:70px;">
+            </div>
+            <nav class="header-nav d-flex gap-3">
+                <a class="nav-link px-2" href="index.html">Home</a>
+                <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">Laboratory Mix Design Studies</a>
+                <a class="nav-link px-2" href="contact.html">Contact</a>
+                <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
+                <a class="nav-link px-2" href="news.html">News</a>
+            </nav>
+        </div>
+    </header>
 
     <main class="section fade-in py-5" id="news-article-main">
         <div class="container">
+            <div class="mb-4">
+                <a href="news.html" class="btn btn-outline-secondary">&larr; Back to News</a>
+            </div>
             <div id="news-article-content" class="mx-auto" style="max-width: 800px;">
                 <div class="text-center text-muted">Loading article...</div>
             </div>
         </div>
     </main>
 
-    <!-- ...existing footer code (copy from your other pages)... -->
-
+    <footer class="mt-5">
+        <div class="container py-4">
+            <div class="row align-items-start">
+                <!-- Company Logo (Left) -->
+                <div class="col-md-4 text-center text-md-end mb-3 mb-md-0 pt-md-3">
+                    <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" class="img-fluid" style="max-width: 500px; max-height: 100px;">
+                </div>
+                <!-- Our Accreditations (Center) -->
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h3 class="mb-2">Our Accreditations</h3>
+                    <div class="mb-2">
+                        <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" class="img-fluid" style="max-width: 120px; max-height: 60px;">
+                    </div>
+                    <div class="fw-bold mb-2">21581</div>
+                    <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
+                </div>
+                <!-- Contact Us (Right) -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="mb-2">Contact Us</h3>
+                    <div class="mb-2">
+                        <div>T: (+44) 01629 584 416</div>
+                        <div>
+                            E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block mt-2">
+                        <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" style="width: 32px; height: 32px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center py-2">
+            CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
+            <div class="copyright">
+                &copy; 2025 CE Geotech. All rights reserved.
+            </div>
+        </div>
+    </footer>
     <script>
     // Parse ?file=... from URL
     function getQueryParam(name) {
@@ -41,7 +98,9 @@
             const res = await fetch(file);
             if (!res.ok) throw new Error('Not found');
             const md = await res.text();
-            container.innerHTML = marked.parse(md);
+            // Remove YAML frontmatter if present
+            const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
+            container.innerHTML = marked.parse(cleaned);
         } catch (e) {
             container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
         }

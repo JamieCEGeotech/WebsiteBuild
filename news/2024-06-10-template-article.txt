@@ -1,7 +1,7 @@
 ---
 title: "Template News Article"
 date: "2024-06-10"
-image: "Files/your-image.jpg"
+image: "Files/002.jpg"
 category: "General"
 ---
 
