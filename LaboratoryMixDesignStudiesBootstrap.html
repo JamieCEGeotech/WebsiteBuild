@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laboratory Mix Design Studies | CE Geotech</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Laboratory Mix Design Studies by CE Geotech: Project-specific mix design, materials characterisation, and strength assessment for ground engineering.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CE Geotech">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Laboratory Mix Design Studies | CE Geotech">
+    <meta property="og:description" content="Project-specific mix design, materials characterisation, and strength assessment for ground engineering.">
+    <meta property="og:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/IMG_0094.JPG">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jamiecegeotech.github.io/WebsiteBuild/LaboratoryMixDesignStudiesBootstrap.html">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Laboratory Mix Design Studies | CE Geotech">
+    <meta name="twitter:description" content="Project-specific mix design, materials characterisation, and strength assessment for ground engineering.">
+    <meta name="twitter:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/IMG_0094.JPG">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=" id="main-css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
     <script>
       // Global cache version variable
       window.CACHE_VERSION = '1';
     </script>
-    <link rel="stylesheet" href="style.css?v=" id="main-css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    
 </head>
 <body>
     <!-- Top blue bar -->
@@ -35,81 +50,244 @@
         </div>
     </header>
 
-    <!-- Hero Image/Section -->
-    <section class="hero-banner fade-in p-0 m-0" id="lab-hero" style="position:relative;">
-        <div class="w-100" style="height:400px; min-height:300px; position:relative;">
-            <img src="Files/IMG_0094.JPG" class="d-block w-100 h-100" alt="Laboratory Mix Design" style="object-fit:cover; min-height:300px; filter: brightness(0.65);">
-            <div class="hero-banner-content position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                <div class="container">
-                    <div class="hero-banner-content-inner text-center text-white bg-dark bg-opacity-50 p-4 rounded">
-                        <h1>Laboratory Mix Design Studies</h1>
-                        <h2>Project-specific mix design studies for ground engineering excellence</h2>
-                    </div>
+    <!-- Hero Banner with Bootstrap Carousel -->
+    <section class="hero-banner fade-in p-0 m-0" id="home" style="position:relative;">
+        <div id="heroCarousel" class="carousel slide w-100" data-bs-ride="carousel"
+     style="height:calc(100vh - 135px); min-height:400px; position:relative; z-index: 1;">
+    <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="Files/Truck With excavator.jpg" class="d-block w-100 h-100" alt="Truck with Excavator" loading="eager" style="object-fit:cover;">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="Files/IMG_0130.JPG" class="d-block w-100 h-100" alt="Site Testing" loading="lazy" style="object-fit:cover;">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="Files/IMG_0094.JPG" class="d-block w-100 h-100" alt="Laboratory" loading="lazy" style="object-fit:cover;">
+                </div>
+                <!-- Additional images from elsewhere on the site -->
+                <div class="carousel-item h-100">
+                    <img src="Files/IMG_1126.jpg" class="d-block w-100 h-100" alt="Field Testing" loading="lazy" style="object-fit:cover;">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="Files/IMG_2433A.jpg" class="d-block w-100 h-100" alt="CBR Testing" loading="lazy" style="object-fit:cover;">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="Files/IMG_0078.JPG" class="d-block w-100 h-100" alt="MCV Testing" loading="lazy" style="object-fit:cover;">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="Files/IMG_0048.JPG" class="d-block w-100 h-100" alt="Sulphate Suite Testing" loading="lazy" style="object-fit:cover;">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="Files/20200205_114402.jpg" class="d-block w-100 h-100" alt="Lime Demand Testing" loading="lazy" style="object-fit:cover;">
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                
+            </button>
+            <!-- Overlay content, centered and padded via .container -->
+            <div class="hero-banner-content position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="pointer-events:none;">
+                <div class="container">
+                  <div class="hero-banner-content-inner text-center text-white bg-dark bg-opacity-50 p-4 rounded">
+                      <h1>CE Geotech: Experts in Hydraulically Bound Soil Solutions for Ground Engineering Projects</h1>
+                      <h2>From site characterisation to final validation, CE Geotech ensures seamless project delivery with precision, innovation, and unmatched technical expertise.</h2>
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-overlay">
+            <img src="Files/UKAS Accreditation Symbol - black on white - Testing.png"
+              alt="UKAS Accreditation"
+              class="carousel-overlay-ukas"
+              style="width:100px; height:auto;"/>
+            </div>    
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="section fade-in py-5" id="lab-mix-design">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Text Content -->
-                <div class="col-12 col-lg-7">
-                    <h2 class="mb-3">What We Offer</h2>
-                    <p>
-                        CE Geotech provides tailored laboratory mix design studies to meet your project’s technical and performance requirements. Our laboratory team delivers comprehensive characterisation and optimisation of hydraulically bound materials for ground engineering.
-                    </p>
-                    <h4 class="mt-4 mb-2">Materials Characterisation Includes:</h4>
-                    <ul>
-                        <li>Optimum Moisture Content &amp; Maximum Dry Density (OMC-MDD) – BS EN 13286-4:2003, BS 1377-4:1990</li>
-                        <li>Moisture Condition Value (MCV Range) – BS EN 13286-46:2003</li>
-                        <li>BRE-SD1 Sulphate Suite</li>
-                        <li>Particle Size Distribution (PSD) Wet/Dry – BS 1377-2:1990</li>
-                        <li>Plasticity Index – BS 1377-2:1990</li>
-                        <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
-                    </ul>
-                    <h4 class="mt-4 mb-2">Assessment of Strength/Stiffness:</h4>
-                    <ul>
-                        <li>California Bearing Ratio (CBR) and Immediate Bearing Index (IBI) – BS EN 13286-47:2012, BS 1377-4:1990</li>
-                        <li>CBR Swell - BS EN 13286-47:2012, BS 1377-4:1990</li>
-                        <li>Accelerated Swell Testing BS EN 13286-49:2004</li>
-                        <li>Loss of Strength on Immersion SHW Series 800</li>
-                        <li>Unconfined Compressive Strength - BS EN 13286-41:2004</li>
-                        <li>Elastic Modulus - BS EN 13286-43: 2003</li>
-                        <li>Quick Undrained Triaxial – BS 1377-7:1990</li>
-                        <li>Permeability (Falling Head) - K H Head:2011</li>
-                    </ul>
-                    <a href="contact.html" class="service-btn">Contact Us</a>
-                </div>
-                <!-- Image/Visual -->
-                <div class="col-12 col-lg-5 mb-4 mb-lg-0">
-                    <div class="rounded shadow overflow-hidden" style="background: #e0e6ed;">
-                        <img src="Files/IMG_0094.JPG" alt="Laboratory Mix Design" class="img-fluid w-100" style="object-fit:cover; min-height:320px;">
-                    </div>
-                </div>
-            </div>
+    <!-- Intro Paragraph -->
+    <section class="section fade-in py-5" id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center mb-4">
+                Cutting Edge Geotechnical
+            </h2>
+            <p>
+              At CE Geotech, we are passionate about transforming challenging ground conditions into opportunities for innovation. As specialists in hydraulically bound soils, we deliver tailored geotechnical solutions that drive the success of ground engineering projects across the UK.
+            </p>
+            <p>
+              Our hands-on approach means we partner with you at every stage—beginning with in-depth site characterisation, advancing through rigorous laboratory mix design studies, and culminating in precise on-site control and validation testing. This seamless process ensures your project benefits from expert guidance, technical excellence, and consistent communication from start to finish.
+            </p>
+            <p>
+              Discover how CE Geotech can add value to your next project—download our 
+              <a href="Files/CE GeoTech Cap Stat Overview 12pp v3.indd.pdf" class="fw-bold" style="color: #43a3d3; text-decoration: none;" target="_blank">Capability Statement</a>
+              to explore our full range of services and expertise.
+            </p>
+          </div>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <!-- Optional: Callout Section -->
-    <section class="section fade-in py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-8">
-                    <h2>Why Choose CE Geotech?</h2>
-                    <ul>
-                        <li>Experienced laboratory and field teams</li>
-                        <li>Accredited testing and reporting</li>
-                        <li>End-to-end project support</li>
-                        <li>Proven track record in ground engineering</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4 text-center">
-                    <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="UKAS Accreditation" class="img-fluid" style="max-width:120px;">
-                </div>
+    <!-- Statistics Section -->
+    <section class="section fade-in py-5" id="statistics">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-12 col-md-3">
+            <div class="stat-icon mb-3">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/building.svg" alt="Projects Icon" style="width:60px; height:60px;">
             </div>
+            <div class="stat-number display-5 fw-bold">100+</div>
+            <div class="stat-label h5 mt-2">Projects Completed</div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="stat-icon mb-3">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/people.svg" alt="Clients Icon" style="width:60px; height:60px;">
+            </div>
+            <div class="stat-number display-5 fw-bold">50+</div>
+            <div class="stat-label h5 mt-2">Clients Served</div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="stat-icon mb-3">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/globe.svg" alt="Years Icon" style="width:60px; height:60px;">
+            </div>
+            <div class="stat-number display-5 fw-bold">15</div>
+            <div class="stat-label h5 mt-2">Years Experience</div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="stat-icon mb-3">
+              <!-- Use a Bootstrap icon that exists, e.g. "clipboard-data" -->
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/clipboard-data.svg" alt="Lab Tests Icon" style="width:60px; height:60px;">
+            </div>
+            <div class="stat-number display-5 fw-bold">10,000+</div>
+            <div class="stat-label h5 mt-2">Laboratory Tests Performed</div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- SERVICE CARDS -->
+    <section class="section fade-in py-5" id="services">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Site Testing Services Card -->
+      <div class="col-12 col-lg-6 d-flex justify-content-center">
+        <div class="service-fade-card">
+          <div class="service-fade-front" style="background-image: url('Files/IMG_0130.JPG');">
+            <div class="service-fade-overlay"></div>
+            <!-- White cone icon above heading (Bootstrap "cone-striped") -->
+            <div class="stat-icon mb-2">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/cone-striped.svg" alt="Site Testing Icon" style="width:48px; height:48px; filter: invert(1);">
+            </div>
+            <h2>Site Testing Services</h2>
+          </div>
+          <div class="service-fade-back" style="background-image: url('Files/IMG_0130.JPG');">
+            <div class="service-fade-overlay"></div>
+            <h2>Site Testing Services</h2>
+            <p>
+              Utilising our expertise and experience gained over many years, we offer a fully integrated materials testing service in all aspects of soil stabilisation works from initial site visit, sampling, trial pitting and DCP testing through to earthworks control and validation testing during the construction phase.
+              <br><br>
+              Through years of experience on site, our engineers not only provide timely and robust data for stabilisation control, but can also assist with the interpretation of challenging site conditions.
+            </p>
+            <a href="LaboratoryMixDesignStudiesBootstrap.html" class="service-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Laboratory Mix Design Studies Card -->
+      <div class="col-12 col-lg-6 d-flex justify-content-center">
+        <div class="service-fade-card">
+          <div class="service-fade-front" style="background-image: url('Files/IMG_0094.JPG');">
+            <div class="service-fade-overlay"></div>
+            <!-- White clipboard icon above heading -->
+            <div class="stat-icon mb-2">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/clipboard-data.svg" alt="Lab Mix Design Icon" style="width:48px; height:48px; filter: invert(1);">
+            </div>
+            <h2>Laboratory Mix Design Studies</h2>
+          </div>
+          <div class="service-fade-back" style="background-image: url('Files/IMG_0094.JPG');">
+            <div class="service-fade-overlay"></div>
+            <h2>Laboratory Mix Design Studies</h2>
+            <p>
+              Project specific mix design studies can be tailored to meet project specifications;
+              <br><br>
+              <strong>Materials Characterisation</strong>
+            </p>
+            <ul style="text-align: left;">
+              <li>Optimum Moisture Content Maximum Dry Density (OMC-MDD) – BS EN 13286-4:2003, BS 1377-4:1990</li>
+              <li>Moisture Condition Value (MCV Range) – BS EN 13286-46:2003</li>
+              <li>BRE-SD1 Sulphate Suite</li>
+              <li>Particle Size Distribution (PSD) Wet/Dry BS 1377-2:1990</li>
+              <li>Plasticity Index – BS 1377-2: 1990</li>
+              <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
+            </ul>
+            <a href="LaboratoryMixDesignStudiesBootstrap.html" class="service-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- NEWS BANNER -->
+    <section class="news-banner fade-in py-5" id="news">
+  <div class="container">
+    <div class="row align-items-stretch" style="min-height:180px;">
+      <!-- Left Column -->
+      <div class="col-md-8 d-flex flex-column justify-content-center">
+        <h2>News</h2>
+        <p>Keep up to date with the latest news, updates, and project highlights from CE Geotech. Stay informed about our innovations, achievements, and industry insights.</p>
+      </div>
+      <!-- Right Column with background image -->
+      <div class="col-md-4 d-flex p-0">
+        <div class="news-banner-image-bg w-100 d-flex align-items-center justify-content-center">
+          <a href="news.html" class="service-btn position-relative z-2">View All News</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Google Maps Embed -->
+        <!-- Location Section -->
+    <section class="section fade-in py-5" id="location">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <!-- Map Column -->
+          <div class="col-12 col-md-7">
+            <div class="rounded shadow h-100 overflow-hidden">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9566.316934463834!2d-1.4925063!3d53.1715886!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x882ba5afaae03d08!2sCEG%20Laboratories!5e0!3m2!1sen!2suk!4v1621333115318!5m2!1sen!2suk" 
+                width="100%" 
+                height="350" 
+                style="border:0; display:block;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+          <!-- Info Column -->
+          <div class="col-12 col-md-5 d-flex align-items-center">
+            <div>
+              <h3 class="mb-3">Our Location</h3>
+              <p>
+                CE Geotech is based in the heart of Derbyshire, providing geotechnical solutions across the UK. Our laboratory and offices are easily accessible and situated in a scenic rural setting.
+              </p>
+              <address class="mb-3">
+                <strong>CE Geotech / CEG Laboratories</strong><br>
+                Ashover Business Centre,<br>
+                Matlock Road, Kelstedge,<br>
+                Ashover, Derbyshire,<br>
+                S45 0DX, United Kingdom
+              </address>
+              <p class="mb-1">T: <a href="tel:+441629584416">(+44) 01629 584 416</a></p>
+              <p>E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer class="mt-5">
