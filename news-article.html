@@ -82,55 +82,75 @@
         </div>
     </footer>
     <script>
-    // Parse ?file=... from URL
-    function getQueryParam(name) {
-        const url = new URL(window.location.href);
-        return url.searchParams.get(name);
-    }
+function getQueryParam(name) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
+}
 
-    // Extract frontmatter as an object
-    function parseFrontmatter(md) {
-        const match = md.match(/^---\s*([\s\S]*?)---\s*/);
-        if (!match) return {};
-        const lines = match[1].split('\n');
-        const obj = {};
-        for (const line of lines) {
-            const [key, ...rest] = line.split(':');
-            if (key && rest.length) {
-                obj[key.trim()] = rest.join(':').trim().replace(/^"|"$/g, '');
+// Extract frontmatter as an object
+function parseFrontmatter(md) {
+    const match = md.match(/^---\s*([\s\S]*?)---\s*/);
+    if (!match) return {};
+    const lines = match[1].split('\n');
+    const obj = {};
+    for (const line of lines) {
+        const [key, ...rest] = line.split(':');
+        if (key && rest.length) {
+            obj[key.trim()] = rest.join(':').trim().replace(/^"|"$/g, '');
+        }
+    }
+    return obj;
+}
+
+// Extract first image from markdown content (after frontmatter)
+function extractFirstMarkdownImage(md) {
+    // Remove frontmatter
+    const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
+    // Regex for markdown image: ![alt](src)
+    const imgMatch = cleaned.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+    if (imgMatch) {
+        return {
+            src: imgMatch[2],
+            alt: imgMatch[1] || ''
+        };
+    }
+    return null;
+}
+
+async function loadArticle() {
+    const file = getQueryParam('file');
+    const container = document.getElementById('news-article-content');
+    const imageContainer = document.getElementById('news-article-image');
+    if (!file) {
+        container.innerHTML = '<div class="text-danger text-center">No article specified.</div>';
+        return;
+    }
+    try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('Not found');
+        const md = await res.text();
+        // Extract frontmatter and image
+        const frontmatter = parseFrontmatter(md);
+        let imageHtml = '';
+        if (frontmatter.image) {
+            imageHtml = `<img src="${frontmatter.image}" alt="${frontmatter.title || ''}" class="img-fluid rounded mb-3" style="max-height:340px;object-fit:cover;">`;
+        } else {
+            // Try to extract first image from markdown
+            const mdImg = extractFirstMarkdownImage(md);
+            if (mdImg) {
+                imageHtml = `<img src="${mdImg.src}" alt="${mdImg.alt}" class="img-fluid rounded mb-3" style="max-height:340px;object-fit:cover;">`;
             }
         }
-        return obj;
+        imageContainer.innerHTML = imageHtml;
+        // Remove YAML frontmatter if present
+        const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
+        container.innerHTML = marked.parse(cleaned);
+    } catch (e) {
+        container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
+        imageContainer.innerHTML = '';
     }
-
-    async function loadArticle() {
-        const file = getQueryParam('file');
-        const container = document.getElementById('news-article-content');
-        const imageContainer = document.getElementById('news-article-image');
-        if (!file) {
-            container.innerHTML = '<div class="text-danger text-center">No article specified.</div>';
-            return;
-        }
-        try {
-            const res = await fetch(file);
-            if (!res.ok) throw new Error('Not found');
-            const md = await res.text();
-            // Extract frontmatter and image
-            const frontmatter = parseFrontmatter(md);
-            if (frontmatter.image) {
-                imageContainer.innerHTML = `<img src="${frontmatter.image}" alt="${frontmatter.title || ''}" class="img-fluid rounded mb-3" style="max-height:340px;object-fit:cover;">`;
-            } else {
-                imageContainer.innerHTML = '';
-            }
-            // Remove YAML frontmatter if present
-            const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
-            container.innerHTML = marked.parse(cleaned);
-        } catch (e) {
-            container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
-            imageContainer.innerHTML = '';
-        }
-    }
-    window.addEventListener('DOMContentLoaded', loadArticle);
+}
+window.addEventListener('DOMContentLoaded', loadArticle);
     </script>
     <script src="fade-in.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
