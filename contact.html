@@ -3,31 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>News Article | CE Geotech</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="CE Geotech">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="News Article | CE Geotech">
-    <meta property="og:description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
-    <meta property="og:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://jamiecegeotech.github.io/WebsiteBuild/news-article.html">
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="News Article | CE Geotech">
-    <meta name="twitter:description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
-    <meta name="twitter:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
-    <script>
-      // Global cache version variable
-      window.CACHE_VERSION = '1';
-    </script>
+    <title>Contact Us - CE Geotech</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=" id="main-css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <!-- Top blue bar -->
@@ -43,21 +24,63 @@
             <nav class="header-nav d-flex gap-3">
                 <a class="nav-link px-2" href="index.html">Home</a>
                 <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">Laboratory Mix Design Studies</a>
-                <a class="nav-link px-2" href="contact.html">Contact</a>
+                <a class="nav-link px-2 active" href="contact.html">Contact</a>
                 <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
                 <a class="nav-link px-2" href="news.html">News</a>
             </nav>
         </div>
     </header>
 
-    <main class="section fade-in py-5" id="news-article-main">
+    <main class="section fade-in py-5" id="contact">
         <div class="container">
-            <div class="mb-4">
-                <a href="news.html" class="btn btn-outline-secondary">&larr; Back to News</a>
-            </div>
-            <!-- Remove the top image container -->
-            <div id="news-article-content" class="mx-auto" style="max-width: 800px;">
-                <div class="text-center text-muted">Loading article...</div>
+            <div class="row g-5 align-items-start">
+                <!-- Contact Info and Heading (Left) -->
+                <div class="col-12 col-md-6">
+                    <div class="ps-md-4">
+                        <h1 class="mb-4 text-start">Get in touch!</h1>
+                        <div class="mb-4 text-start">
+                            <strong>
+                                CE Geotech<br>
+                                CEG Laboratories<br>
+                                Ashover, Derbyshire<br>
+                                United Kingdom<br>
+                                S45 0DX
+                            </strong>
+                            <br><br>
+                            Tel: (+44) 01629 584 416<br>
+                            <a href="mailto:enquiries@cegeotech.co.uk" class="fw-bold" style="color: #43a3d3; text-decoration: none;">enquiries@cegeotech.co.uk</a>
+                        </div>
+                        <div class="mt-4 text-start">
+                            <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block">
+                                <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" style="width: 32px; height: 32px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form (Right) -->
+                <div class="col-12 col-md-6">
+                    <div class="pe-md-4">
+                        <form action="https://formspree.io/f/your-form-id" method="POST" class="bg-light p-4 rounded shadow-sm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Name</label>
+                                <input type="text" id="name" name="name" required class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">Your Email Address</label>
+                                <input type="email" id="email" name="email" required class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tel" class="form-label fw-bold">Telephone Number</label>
+                                <input type="tel" id="tel" name="tel" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="comment" class="form-label fw-bold">Comment</label>
+                                <textarea id="comment" name="comment" rows="4" required class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="service-btn">Send</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -100,64 +123,8 @@
             </div>
         </div>
     </footer>
-    <script>
-function getQueryParam(name) {
-    const url = new URL(window.location.href);
-    return url.searchParams.get(name);
-}
-
-// Extract frontmatter as an object
-function parseFrontmatter(md) {
-    const match = md.match(/^---\s*([\s\S]*?)---\s*/);
-    if (!match) return {};
-    const lines = match[1].split('\n');
-    const obj = {};
-    for (const line of lines) {
-        const [key, ...rest] = line.split(':');
-        if (key && rest.length) {
-            obj[key.trim()] = rest.join(':').trim().replace(/^"|"$/g, '');
-        }
-    }
-    return obj;
-}
-
-async function loadArticle() {
-    const file = getQueryParam('file');
-    const container = document.getElementById('news-article-content');
-    if (!file) {
-        container.innerHTML = '<div class="text-danger text-center">No article specified.</div>';
-        return;
-    }
-    try {
-        const res = await fetch(file);
-        if (!res.ok) throw new Error('Not found');
-        const md = await res.text();
-        // Remove YAML frontmatter if present
-        const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
-        container.innerHTML = marked.parse(cleaned);
-        // Make all images in the article align left and smaller
-        const imgs = container.querySelectorAll('img');
-        imgs.forEach(img => {
-            img.classList.add('img-fluid', 'rounded', 'mb-3');
-            img.style.maxWidth = '300px';
-            img.style.height = 'auto';
-            img.style.display = 'block';
-            img.style.marginLeft = '0';
-            img.style.marginRight = 'auto';
-        });
-    } catch (e) {
-        container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
-    }
-}
-window.addEventListener('DOMContentLoaded', loadArticle);
-    </script>
-    <script>
-      // Set cache version for CSS/JS includes
-      document.getElementById('main-css').href = 'style.css?v=' + window.CACHE_VERSION;
-      // If you have other scripts to cache-bust, set their src here as well:
-      // document.getElementById('fade-in-js').src = 'fade-in.js?v=' + window.CACHE_VERSION;
-    </script>
-    <script src="fade-in.js?v=" id="fade-in-js"></script>
+    <script src="fade-in.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

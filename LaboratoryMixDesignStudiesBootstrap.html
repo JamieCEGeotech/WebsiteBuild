@@ -3,31 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>News Article | CE Geotech</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="CE Geotech">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="News Article | CE Geotech">
-    <meta property="og:description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
-    <meta property="og:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://jamiecegeotech.github.io/WebsiteBuild/news-article.html">
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="News Article | CE Geotech">
-    <meta name="twitter:description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
-    <meta name="twitter:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
+    <title>Laboratory Mix Design Studies | CE Geotech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script>
       // Global cache version variable
       window.CACHE_VERSION = '1';
     </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=" id="main-css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
 </head>
 <body>
     <!-- Top blue bar -->
@@ -42,7 +27,7 @@
             </div>
             <nav class="header-nav d-flex gap-3">
                 <a class="nav-link px-2" href="index.html">Home</a>
-                <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">Laboratory Mix Design Studies</a>
+                <a class="nav-link px-2 active" href="LaboratoryMixDesignStudiesBootstrap.html">Laboratory Mix Design Studies</a>
                 <a class="nav-link px-2" href="contact.html">Contact</a>
                 <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
                 <a class="nav-link px-2" href="news.html">News</a>
@@ -50,17 +35,82 @@
         </div>
     </header>
 
-    <main class="section fade-in py-5" id="news-article-main">
-        <div class="container">
-            <div class="mb-4">
-                <a href="news.html" class="btn btn-outline-secondary">&larr; Back to News</a>
+    <!-- Hero Image/Section -->
+    <section class="hero-banner fade-in p-0 m-0" id="lab-hero" style="position:relative;">
+        <div class="w-100" style="height:400px; min-height:300px; position:relative;">
+            <img src="Files/IMG_0094.JPG" class="d-block w-100 h-100" alt="Laboratory Mix Design" style="object-fit:cover; min-height:300px; filter: brightness(0.65);">
+            <div class="hero-banner-content position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <div class="container">
+                    <div class="hero-banner-content-inner text-center text-white bg-dark bg-opacity-50 p-4 rounded">
+                        <h1>Laboratory Mix Design Studies</h1>
+                        <h2>Project-specific mix design studies for ground engineering excellence</h2>
+                    </div>
+                </div>
             </div>
-            <!-- Remove the top image container -->
-            <div id="news-article-content" class="mx-auto" style="max-width: 800px;">
-                <div class="text-center text-muted">Loading article...</div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="section fade-in py-5" id="lab-mix-design">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Text Content -->
+                <div class="col-12 col-lg-7">
+                    <h2 class="mb-3">What We Offer</h2>
+                    <p>
+                        CE Geotech provides tailored laboratory mix design studies to meet your project’s technical and performance requirements. Our laboratory team delivers comprehensive characterisation and optimisation of hydraulically bound materials for ground engineering.
+                    </p>
+                    <h4 class="mt-4 mb-2">Materials Characterisation Includes:</h4>
+                    <ul>
+                        <li>Optimum Moisture Content &amp; Maximum Dry Density (OMC-MDD) – BS EN 13286-4:2003, BS 1377-4:1990</li>
+                        <li>Moisture Condition Value (MCV Range) – BS EN 13286-46:2003</li>
+                        <li>BRE-SD1 Sulphate Suite</li>
+                        <li>Particle Size Distribution (PSD) Wet/Dry – BS 1377-2:1990</li>
+                        <li>Plasticity Index – BS 1377-2:1990</li>
+                        <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
+                    </ul>
+                    <h4 class="mt-4 mb-2">Assessment of Strength/Stiffness:</h4>
+                    <ul>
+                        <li>California Bearing Ratio (CBR) and Immediate Bearing Index (IBI) – BS EN 13286-47:2012, BS 1377-4:1990</li>
+                        <li>CBR Swell - BS EN 13286-47:2012, BS 1377-4:1990</li>
+                        <li>Accelerated Swell Testing BS EN 13286-49:2004</li>
+                        <li>Loss of Strength on Immersion SHW Series 800</li>
+                        <li>Unconfined Compressive Strength - BS EN 13286-41:2004</li>
+                        <li>Elastic Modulus - BS EN 13286-43: 2003</li>
+                        <li>Quick Undrained Triaxial – BS 1377-7:1990</li>
+                        <li>Permeability (Falling Head) - K H Head:2011</li>
+                    </ul>
+                    <a href="contact.html" class="service-btn">Contact Us</a>
+                </div>
+                <!-- Image/Visual -->
+                <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                    <div class="rounded shadow overflow-hidden" style="background: #e0e6ed;">
+                        <img src="Files/IMG_0094.JPG" alt="Laboratory Mix Design" class="img-fluid w-100" style="object-fit:cover; min-height:320px;">
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+
+    <!-- Optional: Callout Section -->
+    <section class="section fade-in py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8">
+                    <h2>Why Choose CE Geotech?</h2>
+                    <ul>
+                        <li>Experienced laboratory and field teams</li>
+                        <li>Accredited testing and reporting</li>
+                        <li>End-to-end project support</li>
+                        <li>Proven track record in ground engineering</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="UKAS Accreditation" class="img-fluid" style="max-width:120px;">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="mt-5">
         <div class="container py-4">
@@ -101,63 +151,13 @@
         </div>
     </footer>
     <script>
-function getQueryParam(name) {
-    const url = new URL(window.location.href);
-    return url.searchParams.get(name);
-}
-
-// Extract frontmatter as an object
-function parseFrontmatter(md) {
-    const match = md.match(/^---\s*([\s\S]*?)---\s*/);
-    if (!match) return {};
-    const lines = match[1].split('\n');
-    const obj = {};
-    for (const line of lines) {
-        const [key, ...rest] = line.split(':');
-        if (key && rest.length) {
-            obj[key.trim()] = rest.join(':').trim().replace(/^"|"$/g, '');
-        }
-    }
-    return obj;
-}
-
-async function loadArticle() {
-    const file = getQueryParam('file');
-    const container = document.getElementById('news-article-content');
-    if (!file) {
-        container.innerHTML = '<div class="text-danger text-center">No article specified.</div>';
-        return;
-    }
-    try {
-        const res = await fetch(file);
-        if (!res.ok) throw new Error('Not found');
-        const md = await res.text();
-        // Remove YAML frontmatter if present
-        const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
-        container.innerHTML = marked.parse(cleaned);
-        // Make all images in the article align left and smaller
-        const imgs = container.querySelectorAll('img');
-        imgs.forEach(img => {
-            img.classList.add('img-fluid', 'rounded', 'mb-3');
-            img.style.maxWidth = '300px';
-            img.style.height = 'auto';
-            img.style.display = 'block';
-            img.style.marginLeft = '0';
-            img.style.marginRight = 'auto';
-        });
-    } catch (e) {
-        container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
-    }
-}
-window.addEventListener('DOMContentLoaded', loadArticle);
-    </script>
-    <script>
       // Set cache version for CSS/JS includes
       document.getElementById('main-css').href = 'style.css?v=' + window.CACHE_VERSION;
       // If you have other scripts to cache-bust, set their src here as well:
       // document.getElementById('fade-in-js').src = 'fade-in.js?v=' + window.CACHE_VERSION;
     </script>
     <script src="fade-in.js?v=" id="fade-in-js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
