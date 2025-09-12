@@ -23,7 +23,7 @@ CBR testing is used to evaluate the strength of subgrade soil and base materials
 
 ### 2. **Moisture Condition Value (MCV)**
 
-![MCV Testing](Files/IMG_0078.jpg)
+![MCV Testing](Files/IMG_0078.JPG)
 
 MCV testing assesses how easily soil can be compacted and worked with during construction.
 
@@ -31,7 +31,7 @@ MCV testing assesses how easily soil can be compacted and worked with during con
 
 ### 3. **Sulphate Suite Testing**
 
-![Sulphate Suite Testing](Files/IMG_0048.jpg)
+![Sulphate Suite Testing](Files/IMG_0048.JPG)
 
 This suite of tests identifies the presence of sulphates and pH levels in soil, which can affect concrete durability.
 

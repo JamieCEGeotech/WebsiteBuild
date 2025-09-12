@@ -116,14 +116,14 @@ async function loadArticle() {
         // Remove YAML frontmatter if present
         const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
         container.innerHTML = marked.parse(cleaned);
-        // Make all images in the article smaller
+        // Make all images in the article align left and smaller
         const imgs = container.querySelectorAll('img');
         imgs.forEach(img => {
             img.classList.add('img-fluid', 'rounded', 'mb-3');
-            img.style.maxWidth = '500px';
+            img.style.maxWidth = '300px';
             img.style.height = 'auto';
             img.style.display = 'block';
-            img.style.marginLeft = 'auto';
+            img.style.marginLeft = '0';
             img.style.marginRight = 'auto';
         });
     } catch (e) {
