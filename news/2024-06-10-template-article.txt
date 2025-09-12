@@ -16,4 +16,4 @@ This is a template for a CE Geotech news article. You can write your content her
 
 Feel free to add images, links, and more sections as needed.
 
-![Optional caption](Files/your-image.jpg)
+![Optional caption](Files/002.jpg)
