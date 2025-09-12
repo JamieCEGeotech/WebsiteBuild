@@ -7,13 +7,20 @@
     "summary": "This is a template for a CE Geotech news article. You can write your content here using Markdown.",
     "markdown": "news/2024-06-10-template-article.txt"
   },
-
-   {
+  {
     "title": "CE Geotech Strengthens UK Operations with Expanded Services",
     "date": "2025-09-12",
     "image": "Files/002.jpg",
     "category": "Announcements",
     "summary": "CE Geotech Strengthens UK Operations with Expanded Services",
     "markdown": "news/2025-09-12-StrengthenedUKOperations.txt"
+  },
+  {
+    "title": "How CE Geotech’s Testing Services Support Smarter Building Decisions",
+    "date": "2025-09-12",
+    "image": "Files/IMG_1126.jpg",
+    "category": "Technical insights",
+    "summary": "How CE Geotech’s testing services like CBR, MCV, Sulphate Suite, and Lime Demand support smarter building decisions for clients across the UK.",
+    "markdown": "news/2025-09-12-Test examples.txt"
   }
 ]
