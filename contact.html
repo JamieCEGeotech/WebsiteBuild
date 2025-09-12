@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Us - CE Geotech</title>
+    <title>News Article | CE Geotech</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Contact CE Geotech for geotechnical solutions, laboratory testing, and site services. Based in Derbyshire, serving the UK.">
+    <meta name="description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="CE Geotech">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Contact Us - CE Geotech">
-    <meta property="og:description" content="Contact CE Geotech for geotechnical solutions, laboratory testing, and site services.">
+    <meta property="og:title" content="News Article | CE Geotech">
+    <meta property="og:description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
     <meta property="og:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jamiecegeotech.github.io/WebsiteBuild/contact.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jamiecegeotech.github.io/WebsiteBuild/news-article.html">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact Us - CE Geotech">
-    <meta name="twitter:description" content="Contact CE Geotech for geotechnical solutions, laboratory testing, and site services.">
+    <meta name="twitter:title" content="News Article | CE Geotech">
+    <meta name="twitter:description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
     <meta name="twitter:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
-    <!-- Bootstrap CSS -->
+    <script>
+      // Global cache version variable
+      window.CACHE_VERSION = '1';
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=" id="main-css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -148,27 +151,13 @@ async function loadArticle() {
 }
 window.addEventListener('DOMContentLoaded', loadArticle);
     </script>
-    <script src="fade-in.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-            const mdImg = extractFirstMarkdownImage(md);
-            if (mdImg) {
-                imageHtml = `<img src="${mdImg.src}" alt="${mdImg.alt}" class="img-fluid rounded mb-3" style="max-height:340px;object-fit:cover;">`;
-            }
-        }
-        imageContainer.innerHTML = imageHtml;
-        // Remove YAML frontmatter if present
-        const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
-        container.innerHTML = marked.parse(cleaned);
-    } catch (e) {
-        container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
-        imageContainer.innerHTML = '';
-    }
-}
-window.addEventListener('DOMContentLoaded', loadArticle);
+    <script>
+      // Set cache version for CSS/JS includes
+      document.getElementById('main-css').href = 'style.css?v=' + window.CACHE_VERSION;
+      // If you have other scripts to cache-bust, set their src here as well:
+      // document.getElementById('fade-in-js').src = 'fade-in.js?v=' + window.CACHE_VERSION;
     </script>
-    <script src="fade-in.js"></script>
+    <script src="fade-in.js?v=" id="fade-in-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Client Portal - CE Geotech</title>
+    <title>News Article | CE Geotech</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="CE Geotech Client Portal: Secure access to project data, reports, and geotechnical information for clients.">
-    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
+    <meta name="robots" content="index, follow">
     <meta name="author" content="CE Geotech">
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Client Portal - CE Geotech">
-    <meta property="og:description" content="Secure access to project data, reports, and geotechnical information for clients.">
+    <meta property="og:title" content="News Article | CE Geotech">
+    <meta property="og:description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
     <meta property="og:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jamiecegeotech.github.io/WebsiteBuild/ClientPortal.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jamiecegeotech.github.io/WebsiteBuild/news-article.html">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Client Portal - CE Geotech">
-    <meta name="twitter:description" content="Secure access to project data, reports, and geotechnical information for clients.">
+    <meta name="twitter:title" content="News Article | CE Geotech">
+    <meta name="twitter:description" content="Read the latest news article from CE Geotech. Insights, updates, and technical information for ground engineering projects.">
     <meta name="twitter:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
+    <script>
+      // Global cache version variable
+      window.CACHE_VERSION = '1';
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=" id="main-css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <!-- Top blue bar -->
@@ -39,17 +44,21 @@
                 <a class="nav-link px-2" href="index.html">Home</a>
                 <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">Laboratory Mix Design Studies</a>
                 <a class="nav-link px-2" href="contact.html">Contact</a>
-                <a class="nav-link px-2 active" href="ClientPortal.html">Client Portal</a>
+                <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
                 <a class="nav-link px-2" href="news.html">News</a>
             </nav>
         </div>
     </header>
 
-    <main class="section fade-in py-5" id="client-portal-main">
+    <main class="section fade-in py-5" id="news-article-main">
         <div class="container">
-            <h1 class="text-center mb-4">Client Portal</h1>
-            <p class="text-center text-muted">Secure access to your project data, reports, and geotechnical information.</p>
-            <!-- Add your portal content here -->
+            <div class="mb-4">
+                <a href="news.html" class="btn btn-outline-secondary">&larr; Back to News</a>
+            </div>
+            <!-- Remove the top image container -->
+            <div id="news-article-content" class="mx-auto" style="max-width: 800px;">
+                <div class="text-center text-muted">Loading article...</div>
+            </div>
         </div>
     </main>
 
@@ -91,7 +100,64 @@
             </div>
         </div>
     </footer>
-    <script src="fade-in.js"></script>
+    <script>
+function getQueryParam(name) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
+}
+
+// Extract frontmatter as an object
+function parseFrontmatter(md) {
+    const match = md.match(/^---\s*([\s\S]*?)---\s*/);
+    if (!match) return {};
+    const lines = match[1].split('\n');
+    const obj = {};
+    for (const line of lines) {
+        const [key, ...rest] = line.split(':');
+        if (key && rest.length) {
+            obj[key.trim()] = rest.join(':').trim().replace(/^"|"$/g, '');
+        }
+    }
+    return obj;
+}
+
+async function loadArticle() {
+    const file = getQueryParam('file');
+    const container = document.getElementById('news-article-content');
+    if (!file) {
+        container.innerHTML = '<div class="text-danger text-center">No article specified.</div>';
+        return;
+    }
+    try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error('Not found');
+        const md = await res.text();
+        // Remove YAML frontmatter if present
+        const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
+        container.innerHTML = marked.parse(cleaned);
+        // Make all images in the article align left and smaller
+        const imgs = container.querySelectorAll('img');
+        imgs.forEach(img => {
+            img.classList.add('img-fluid', 'rounded', 'mb-3');
+            img.style.maxWidth = '300px';
+            img.style.height = 'auto';
+            img.style.display = 'block';
+            img.style.marginLeft = '0';
+            img.style.marginRight = 'auto';
+        });
+    } catch (e) {
+        container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
+    }
+}
+window.addEventListener('DOMContentLoaded', loadArticle);
+    </script>
+    <script>
+      // Set cache version for CSS/JS includes
+      document.getElementById('main-css').href = 'style.css?v=' + window.CACHE_VERSION;
+      // If you have other scripts to cache-bust, set their src here as well:
+      // document.getElementById('fade-in-js').src = 'fade-in.js?v=' + window.CACHE_VERSION;
+    </script>
+    <script src="fade-in.js?v=" id="fade-in-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
