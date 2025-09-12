@@ -9,6 +9,20 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <meta name="description" content="Read the latest news and technical insights from CE Geotech, including project updates, laboratory studies, and industry announcements.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CE Geotech">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="News Article | CE Geotech">
+    <meta property="og:description" content="Read the latest news and technical insights from CE Geotech, including project updates, laboratory studies, and industry announcements.">
+    <meta property="og:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jamiecegeotech.github.io/WebsiteBuild/news-article.html">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="News Article | CE Geotech">
+    <meta name="twitter:description" content="Read the latest news and technical insights from CE Geotech, including project updates, laboratory studies, and industry announcements.">
+    <meta name="twitter:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.jpg">
 </head>
 <body>
     <!-- Top blue bar -->
@@ -136,20 +150,6 @@ window.addEventListener('DOMContentLoaded', loadArticle);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-            const mdImg = extractFirstMarkdownImage(md);
-            if (mdImg) {
-                imageHtml = `<img src="${mdImg.src}" alt="${mdImg.alt}" class="img-fluid rounded mb-3" style="max-height:340px;object-fit:cover;">`;
-            }
-        }
-        imageContainer.innerHTML = imageHtml;
-        // Remove YAML frontmatter if present
-        const cleaned = md.replace(/^---[\s\S]*?---\s*/, '');
-        container.innerHTML = marked.parse(cleaned);
-    } catch (e) {
-        container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
-        imageContainer.innerHTML = '';
-    }
-}
 window.addEventListener('DOMContentLoaded', loadArticle);
     </script>
     <script src="fade-in.js"></script>
