@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News Article | CE Geotech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- ...existing header/nav code (copy from your other pages)... -->
+
+    <main class="section fade-in py-5" id="news-article-main">
+        <div class="container">
+            <div id="news-article-content" class="mx-auto" style="max-width: 800px;">
+                <div class="text-center text-muted">Loading article...</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ...existing footer code (copy from your other pages)... -->
+
+    <script>
+    // Parse ?file=... from URL
+    function getQueryParam(name) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name);
+    }
+
+    async function loadArticle() {
+        const file = getQueryParam('file');
+        const container = document.getElementById('news-article-content');
+        if (!file) {
+            container.innerHTML = '<div class="text-danger text-center">No article specified.</div>';
+            return;
+        }
+        try {
+            const res = await fetch(file);
+            if (!res.ok) throw new Error('Not found');
+            const md = await res.text();
+            container.innerHTML = marked.parse(md);
+        } catch (e) {
+            container.innerHTML = '<div class="text-danger text-center">Failed to load article.</div>';
+        }
+    }
+    window.addEventListener('DOMContentLoaded', loadArticle);
+    </script>
+    <script src="fade-in.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
