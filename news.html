@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News | CE Geotech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
+    <!-- Add marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- Top blue bar -->
+    <div class="top-bar d-flex justify-content-end align-items-center" style="height:45px;">
+        <a href="contact.html" class="top-bar-contact-btn btn btn-primary rounded-pill me-5">Contact us</a>
+    </div>
+
+    <header>
+        <div class="header-inner container d-flex align-items-center justify-content-between" style="height:90px;">
+            <div class="header-logo">
+                <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" loading="eager" style="max-height:70px;">
+            </div>
+            <nav class="header-nav d-flex gap-3">
+                <a class="nav-link px-2" href="index.html">Home</a>
+                <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">Laboratory Mix Design Studies</a>
+                <a class="nav-link px-2" href="contact.html">Contact</a>
+                <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
+                <a class="nav-link px-2 active" href="news.html">News</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section fade-in py-5" id="news-main">
+        <div class="container">
+            <h1 class="text-center mb-5">Latest News</h1>
+            <div id="news-grid" class="row g-4">
+                <!-- News cards will be injected here -->
+            </div>
+        </div>
+    </section>
+    <style>
+    /* Ensure all news card images are the same height and cover the area */
+    .news-card-img {
+        height: 240px;
+        object-fit: cover;
+        width: 100%;
+    }
+    /* Make sure card body fills remaining space for uniformity */
+    .card.h-100 {
+        display: flex;
+        flex-direction: column;
+    }
+    .card-body.flex-grow-1 {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    </style>
+    <script>
+    // Fetch news metadata from local relative path and render cards
+    async function loadNews() {
+        const grid = document.getElementById('news-grid');
+        try {
+            // Use relative path for local file access
+            const res = await fetch('api/news.json');
+            const articles = await res.json();
+            // Sort by date descending
+            articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+            for (const article of articles) {
+                // Fetch markdown summary (or use summary from metadata)
+                let summaryHtml = '';
+                if (article.summary) {
+                    summaryHtml = marked.parse(article.summary);
+                } else if (article.markdown) {
+                    try {
+                        // Use relative path for markdown file
+                        const mdRes = await fetch(article.markdown);
+                        const mdText = await mdRes.text();
+                        // Use first paragraph as summary
+                        const firstPara = mdText.split('\n\n')[0];
+                        summaryHtml = marked.parse(firstPara);
+                    } catch {
+                        summaryHtml = "<em>Unable to load summary.</em>";
+                    }
+                }
+                // Card HTML
+                const card = document.createElement('div');
+                card.className = 'col-12 col-md-6 col-lg-4';
+                card.innerHTML = `
+                    <div class="card h-100 shadow-sm d-flex flex-column">
+                        <img src="${article.image || 'Files/placeholder.jpg'}" class="card-img-top news-card-img" alt="${article.title}">
+                        <div class="card-body d-flex flex-column flex-grow-1">
+                            <h5 class="card-title">${article.title}</h5>
+                            <div class="card-text">${summaryHtml}</div>
+                            <div class="mt-auto">
+                                ${article.category ? `<span class="badge bg-primary">${article.category}</span>` : ''}
+                                <span class="text-muted small float-end">${article.date ? new Date(article.date).toLocaleDateString() : ''}</span>
+                            </div>
+                            <a href="news-article.html?file=${encodeURIComponent(article.markdown)}" class="stretched-link" aria-label="Read full article"></a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            }
+        } catch (e) {
+            // Show a more helpful error if running from file://
+            if (location.protocol === 'file:') {
+                grid.innerHTML = '<div class="col-12 text-center text-danger">Failed to load news articles.<br>Make sure all files are in the correct folders and opened from the project root.</div>';
+            } else {
+                grid.innerHTML = '<div class="col-12 text-center text-danger">Failed to load news articles.</div>';
+            }
+        }
+    }
+    window.addEventListener('DOMContentLoaded', loadNews);
+    </script>
+
+    <footer class="mt-5">
+        <div class="container py-4">
+            <div class="row align-items-start">
+                <!-- Company Logo (Left) -->
+                <div class="col-md-4 text-center text-md-end mb-3 mb-md-0 pt-md-3">
+                    <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" class="img-fluid" style="max-width: 500px; max-height: 100px;">
+                </div>
+                <!-- Our Accreditations (Center) -->
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h3 class="mb-2">Our Accreditations</h3>
+                    <div class="mb-2">
+                        <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" class="img-fluid" style="max-width: 120px; max-height: 60px;">
+                    </div>
+                    <div class="fw-bold mb-2">21581</div>
+                    <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
+                </div>
+                <!-- Contact Us (Right) -->
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="mb-2">Contact Us</h3>
+                    <div class="mb-2">
+                        <div>T: (+44) 01629 584 416</div>
+                        <div>
+                            E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a>
+                        </div>
+                    </div>
+                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block mt-2">
+                        <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" style="width: 32px; height: 32px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center py-2">
+            CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
+            <div class="copyright">
+                &copy; 2025 CE Geotech. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="fade-in.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
