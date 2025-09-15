@@ -28,486 +28,492 @@
             <div id="admin-password-msg" class="text-danger mt-2 text-center" style="min-height:1.5em;"></div>
         </form>
     </div>
-    <!-- Top blue bar -->
-    <div class="top-bar d-flex justify-content-end align-items-center" style="height:45px;">
-        <a href="index.html" class="top-bar-contact-btn btn btn-primary rounded-pill me-5">Back to site</a>
-    </div>
-    <header>
-        <div class="header-inner container d-flex align-items-center justify-content-between" style="height:90px;">
-            <div class="header-logo">
-                <a href="index.html">
-                    <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" loading="eager" style="max-height:70px;">
-                </a>
-            </div>
-            <nav class="header-nav d-flex gap-3">
-                <a class="nav-link px-2" href="index.html">Home</a>
-                <a class="nav-link px-2" href="news.html">News</a>
-                <a class="nav-link px-2 active" href="news-admin.html">News Admin</a>
-            </nav>
+    <div id="admin-content" style="display:none;">
+        <!-- Top blue bar -->
+        <div class="top-bar d-flex justify-content-end align-items-center" style="height:45px;">
+            <a href="index.html" class="top-bar-contact-btn btn btn-primary rounded-pill me-5">Back to site</a>
         </div>
-    </header>
-
-    <main class="section fade-in py-5" id="news-admin-main">
-        <div class="container">
-            <h1 class="mb-4 text-center">News Admin</h1>
-            <div class="row">
-                <!-- Existing News Posts -->
-                <div class="col-12 col-lg-7 mb-5">
-                    <h2 class="h4">Existing News Posts</h2>
-                    <div id="news-admin-list" class="list-group mb-4">
-                        <div class="text-muted text-center py-3">Loading news posts...</div>
-                    </div>
-                </div>
-                <!-- Create/Edit News Post -->
-                <div class="col-12 col-lg-5">
-                    <h2 class="h4">Create / Edit News Post</h2>
-                    <form id="news-admin-form" autocomplete="off">
-                        <input type="hidden" id="edit-index" value="">
-                        <div class="mb-2">
-                            <label for="news-title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="news-title" required>
-                        </div>
-                        <div class="mb-2">
-                            <label for="news-date" class="form-label">Date</label>
-                            <input type="date" class="form-control" id="news-date" required>
-                        </div>
-                        <div class="mb-2">
-                            <label for="news-image" class="form-label">Image Path</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="news-image" placeholder="Files/your-image.jpg" autocomplete="off">
-                                <button type="button" class="btn btn-outline-secondary" id="refresh-image-list" title="Refresh image list">&#x21bb;</button>
-                            </div>
-                            <ul id="news-image-dropdown" class="list-group position-absolute" style="z-index:1000; display:none; max-height:200px; overflow-y:auto; width:100%;"></ul>
-                        </div>
-                        <div class="mb-2">
-                            <label for="news-category" class="form-label">Category</label>
-                            <input type="text" class="form-control" id="news-category" placeholder="e.g. Announcements">
-                        </div>
-                        <div class="mb-2">
-                            <label for="news-summary" class="form-label">Summary (Markdown supported)</label>
-                            <textarea class="form-control" id="news-summary" rows="2"></textarea>
-                        </div>
-                        <div class="mb-2">
-                            <label for="news-markdown" class="form-label">Markdown File Path</label>
-                            <input type="text" class="form-control" id="news-markdown" placeholder="news/yyyy-mm-dd-title.txt">
-                        </div>
-                        <!-- New Article Content Area -->
-                        <div class="mb-2">
-                            <label for="news-article" class="form-label">Article Content (Markdown supported)</label>
-                            <textarea class="form-control" id="news-article" rows="8" placeholder="Write the full article here..."></textarea>
-                            <div class="mt-2">
-                                <label for="news-article-image" class="form-label">Attach Image</label>
-                                <input type="file" id="news-article-image" accept="image/*" class="form-control">
-                                <div class="form-text">Selecting an image will insert a Markdown image link at the cursor position. You must upload the image separately to the server.</div>
-                            </div>
-                        </div>
-                        <div class="d-flex gap-2 mt-3">
-                            <button type="submit" class="btn btn-primary" id="news-save-btn">Save/Update &amp; Download</button>
-                            <button type="button" class="btn btn-secondary" id="news-cancel-btn">Cancel</button>
-                        </div>
-                        <div id="news-admin-msg" class="mt-3"></div>
-                    </form>
-                </div>
-            </div>
-            <div class="alert alert-info mt-5">
-                <strong>Note:</strong> This admin page is a static client-side tool. Saving changes will only update your browser's memory. To make changes live, you must download the updated <code>news.json</code> and upload it to <code>api/news.json</code> on the server.
-            </div>
-        </div>
-    </main>
-
-    <footer class="mt-5">
-        <div class="container py-4">
-            <div class="row align-items-start">
-                <!-- Company Logo (Left) -->
-                <div class="col-md-4 text-center text-md-end mb-3 mb-md-0 pt-md-3">
-                    <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" class="img-fluid" style="max-width: 500px; max-height: 100px;">
-                </div>
-                <!-- Our Accreditations (Center) -->
-                <div class="col-md-4 text-center mb-3 mb-md-0">
-                    <h3 class="mb-2">Our Accreditations</h3>
-                    <div class="mb-2">
-                        <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" class="img-fluid" style="max-width: 120px; max-height: 60px;">
-                    </div>
-                    <div class="fw-bold mb-2">21581</div>
-                    <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
-                </div>
-                <!-- Contact Us (Right) -->
-                <div class="col-md-4 text-center text-md-start">
-                    <h3 class="mb-2">Contact Us</h3>
-                    <div class="mb-2">
-                        <div>T: (+44) 01629 584 416</div>
-                        <div>
-                            E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a>
-                        </div>
-                    </div>
-                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block mt-2">
-                        <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" style="width: 32px; height: 32px;">
+        <header>
+            <div class="header-inner container d-flex align-items-center justify-content-between" style="height:90px;">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" loading="eager" style="max-height:70px;">
                     </a>
                 </div>
+                <nav class="header-nav d-flex gap-3">
+                    <a class="nav-link px-2" href="index.html">Home</a>
+                    <a class="nav-link px-2" href="news.html">News</a>
+                    <a class="nav-link px-2 active" href="news-admin.html">News Admin</a>
+                </nav>
             </div>
-        </div>
-        <div class="footer-bottom text-center py-2">
-            CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
-            <div class="copyright">
-                &copy; 2025 CE Geotech. All rights reserved.
+        </header>
+
+        <main class="section fade-in py-5" id="news-admin-main">
+            <div class="container">
+                <h1 class="mb-4 text-center">News Admin</h1>
+                <div class="row">
+                    <!-- Existing News Posts -->
+                    <div class="col-12 col-lg-7 mb-5">
+                        <h2 class="h4">Existing News Posts</h2>
+                        <div id="news-admin-list" class="list-group mb-4">
+                            <div class="text-muted text-center py-3">Loading news posts...</div>
+                        </div>
+                    </div>
+                    <!-- Create/Edit News Post -->
+                    <div class="col-12 col-lg-5">
+                        <h2 class="h4">Create / Edit News Post</h2>
+                        <form id="news-admin-form" autocomplete="off">
+                            <input type="hidden" id="edit-index" value="">
+                            <div class="mb-2">
+                                <label for="news-title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="news-title" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="news-date" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="news-date" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="news-image" class="form-label">Image Path</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="news-image" placeholder="Files/your-image.jpg" autocomplete="off">
+                                    <button type="button" class="btn btn-outline-secondary" id="refresh-image-list" title="Refresh image list">&#x21bb;</button>
+                                </div>
+                                <ul id="news-image-dropdown" class="list-group position-absolute" style="z-index:1000; display:none; max-height:200px; overflow-y:auto; width:100%;"></ul>
+                            </div>
+                            <div class="mb-2">
+                                <label for="news-category" class="form-label">Category</label>
+                                <input type="text" class="form-control" id="news-category" placeholder="e.g. Announcements">
+                            </div>
+                            <div class="mb-2">
+                                <label for="news-summary" class="form-label">Summary (Markdown supported)</label>
+                                <textarea class="form-control" id="news-summary" rows="2"></textarea>
+                            </div>
+                            <div class="mb-2">
+                                <label for="news-markdown" class="form-label">Markdown File Path</label>
+                                <input type="text" class="form-control" id="news-markdown" placeholder="news/yyyy-mm-dd-title.txt">
+                            </div>
+                            <!-- New Article Content Area -->
+                            <div class="mb-2">
+                                <label for="news-article" class="form-label">Article Content (Markdown supported)</label>
+                                <textarea class="form-control" id="news-article" rows="8" placeholder="Write the full article here..."></textarea>
+                                <div class="mt-2">
+                                    <label for="news-article-image" class="form-label">Attach Image</label>
+                                    <input type="file" id="news-article-image" accept="image/*" class="form-control">
+                                    <div class="form-text">Selecting an image will insert a Markdown image link at the cursor position. You must upload the image separately to the server.</div>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <button type="submit" class="btn btn-primary" id="news-save-btn">Save/Update &amp; Download</button>
+                                <button type="button" class="btn btn-secondary" id="news-cancel-btn">Cancel</button>
+                            </div>
+                            <div id="news-admin-msg" class="mt-3"></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="alert alert-info mt-5">
+                    <strong>Note:</strong> This admin page is a static client-side tool. Saving changes will only update your browser's memory. To make changes live, you must download the updated <code>news.json</code> and upload it to <code>api/news.json</code> on the server.
+                </div>
             </div>
-        </div>
-    </footer>
-    <script>
-    // Simple static admin logic (client-side only)
-    let newsData = [];
-    let editIndex = null;
+        </main>
 
-    async function loadNewsAdmin() {
-        const list = document.getElementById('news-admin-list');
-        list.innerHTML = '<div class="text-muted text-center py-3">Loading news posts...</div>';
-        try {
-            const res = await fetch('api/news.json');
-            newsData = await res.json();
-            renderNewsList();
-        } catch {
-            list.innerHTML = '<div class="text-danger text-center py-3">Failed to load news.json</div>';
-        }
-    }
+        <footer class="mt-5">
+            <div class="container py-4">
+                <div class="row align-items-start">
+                    <!-- Company Logo (Left) -->
+                    <div class="col-md-4 text-center text-md-end mb-3 mb-md-0 pt-md-3">
+                        <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" class="img-fluid" style="max-width: 500px; max-height: 100px;">
+                    </div>
+                    <!-- Our Accreditations (Center) -->
+                    <div class="col-md-4 text-center mb-3 mb-md-0">
+                        <h3 class="mb-2">Our Accreditations</h3>
+                        <div class="mb-2">
+                            <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" class="img-fluid" style="max-width: 120px; max-height: 60px;">
+                        </div>
+                        <div class="fw-bold mb-2">21581</div>
+                        <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
+                    </div>
+                    <!-- Contact Us (Right) -->
+                    <div class="col-md-4 text-center text-md-start">
+                        <h3 class="mb-2">Contact Us</h3>
+                        <div class="mb-2">
+                            <div>T: (+44) 01629 584 416</div>
+                            <div>
+                                E: <a href="mailto:enquiries@cegeotech.co.uk">enquiries@cegeotech.co.uk</a>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block mt-2">
+                            <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" style="width: 32px; height: 32px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center py-2">
+                CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
+                <div class="copyright">
+                    &copy; 2025 CE Geotech. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        <script>
+        // Simple static admin logic (client-side only)
+        let newsData = [];
+        let editIndex = null;
 
-    function renderNewsList() {
-        const list = document.getElementById('news-admin-list');
-        if (!newsData.length) {
-            list.innerHTML = '<div class="text-muted text-center py-3">No news posts found.</div>';
-            return;
+        async function loadNewsAdmin() {
+            const list = document.getElementById('news-admin-list');
+            list.innerHTML = '<div class="text-muted text-center py-3">Loading news posts...</div>';
+            try {
+                const res = await fetch('api/news.json');
+                newsData = await res.json();
+                renderNewsList();
+            } catch {
+                list.innerHTML = '<div class="text-danger text-center py-3">Failed to load news.json</div>';
+            }
         }
-        list.innerHTML = '';
-        newsData.forEach((item, idx) => {
-            const div = document.createElement('div');
-            div.className = 'list-group-item d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2';
-            div.innerHTML = `
-                <div>
-                    <strong>${item.title}</strong>
-                    <span class="badge bg-secondary ms-2">${item.category || ''}</span>
-                    <span class="text-muted ms-2">${item.date}</span>
-                </div>
-                <div>
-                    <button class="btn btn-sm btn-outline-primary me-2" onclick="editNews(${idx})">Edit</button>
-                    <button class="btn btn-sm btn-outline-danger" onclick="deleteNews(${idx})">Delete</button>
-                </div>
-            `;
-            list.appendChild(div);
+
+        function renderNewsList() {
+            const list = document.getElementById('news-admin-list');
+            if (!newsData.length) {
+                list.innerHTML = '<div class="text-muted text-center py-3">No news posts found.</div>';
+                return;
+            }
+            list.innerHTML = '';
+            newsData.forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = 'list-group-item d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2';
+                div.innerHTML = `
+                    <div>
+                        <strong>${item.title}</strong>
+                        <span class="badge bg-secondary ms-2">${item.category || ''}</span>
+                        <span class="text-muted ms-2">${item.date}</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-sm btn-outline-primary me-2" onclick="editNews(${idx})">Edit</button>
+                        <button class="btn btn-sm btn-outline-danger" onclick="deleteNews(${idx})">Delete</button>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        // Autofill markdown file path based on title and date
+        function autofillMarkdownPath() {
+            const title = document.getElementById('news-title').value.trim();
+            const date = document.getElementById('news-date').value.trim();
+            if (!title || !date) return;
+            // Format: news/yyyy-mm-dd-title.txt
+            const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+            const path = `news/${date}-${slug}.txt`;
+            document.getElementById('news-markdown').value = path;
+        }
+
+        // Attach autofill to title and date fields, but only if not editing an existing post or if the field is empty
+        document.getElementById('news-title').addEventListener('input', function() {
+            // Only autofill if not editing or if markdown field is empty
+            if (!document.getElementById('edit-index').value || !document.getElementById('news-markdown').value) {
+                autofillMarkdownPath();
+            }
         });
-    }
+        document.getElementById('news-date').addEventListener('input', function() {
+            if (!document.getElementById('edit-index').value || !document.getElementById('news-markdown').value) {
+                autofillMarkdownPath();
+            }
+        });
 
-    // Autofill markdown file path based on title and date
-    function autofillMarkdownPath() {
-        const title = document.getElementById('news-title').value.trim();
-        const date = document.getElementById('news-date').value.trim();
-        if (!title || !date) return;
-        // Format: news/yyyy-mm-dd-title.txt
-        const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-        const path = `news/${date}-${slug}.txt`;
-        document.getElementById('news-markdown').value = path;
-    }
-
-    // Attach autofill to title and date fields, but only if not editing an existing post or if the field is empty
-    document.getElementById('news-title').addEventListener('input', function() {
-        // Only autofill if not editing or if markdown field is empty
-        if (!document.getElementById('edit-index').value || !document.getElementById('news-markdown').value) {
-            autofillMarkdownPath();
+        // When editing, do not overwrite the markdown path if it already exists
+        function editNews(idx) {
+            editIndex = idx;
+            const item = newsData[idx];
+            document.getElementById('edit-index').value = idx;
+            document.getElementById('news-title').value = item.title || '';
+            document.getElementById('news-date').value = item.date || '';
+            document.getElementById('news-image').value = item.image || '';
+            document.getElementById('news-category').value = item.category || '';
+            document.getElementById('news-summary').value = item.summary || '';
+            document.getElementById('news-markdown').value = item.markdown || '';
+            document.getElementById('news-article').value = item.article || '';
+            document.getElementById('news-save-btn').textContent = 'Update Post';
         }
-    });
-    document.getElementById('news-date').addEventListener('input', function() {
-        if (!document.getElementById('edit-index').value || !document.getElementById('news-markdown').value) {
-            autofillMarkdownPath();
+
+        function deleteNews(idx) {
+            if (!confirm('Are you sure you want to delete this news post?')) return;
+            newsData.splice(idx, 1);
+            renderNewsList();
+            document.getElementById('news-admin-msg').textContent = 'Deleted. Remember to update api/news.json on the server.';
         }
-    });
 
-    // When editing, do not overwrite the markdown path if it already exists
-    function editNews(idx) {
-        editIndex = idx;
-        const item = newsData[idx];
-        document.getElementById('edit-index').value = idx;
-        document.getElementById('news-title').value = item.title || '';
-        document.getElementById('news-date').value = item.date || '';
-        document.getElementById('news-image').value = item.image || '';
-        document.getElementById('news-category').value = item.category || '';
-        document.getElementById('news-summary').value = item.summary || '';
-        document.getElementById('news-markdown').value = item.markdown || '';
-        document.getElementById('news-article').value = item.article || '';
-        document.getElementById('news-save-btn').textContent = 'Update Post';
-    }
-
-    function deleteNews(idx) {
-        if (!confirm('Are you sure you want to delete this news post?')) return;
-        newsData.splice(idx, 1);
-        renderNewsList();
-        document.getElementById('news-admin-msg').textContent = 'Deleted. Remember to update api/news.json on the server.';
-    }
-
-    // Replace form submit logic to merge old news.json and download updated news.json and article .txt
-    document.getElementById('news-admin-form').onsubmit = async function(e) {
-        e.preventDefault();
-        const idx = document.getElementById('edit-index').value;
-        const item = {
-            title: document.getElementById('news-title').value,
-            date: document.getElementById('news-date').value,
-            image: document.getElementById('news-image').value,
-            category: document.getElementById('news-category').value,
-            summary: document.getElementById('news-summary').value,
-            markdown: document.getElementById('news-markdown').value,
-            article: document.getElementById('news-article').value
-        };
-        let msg = '';
-        if (idx !== '' && !isNaN(idx)) {
-            newsData[idx] = item;
-            msg = 'Updated. Downloading updated news.json and article .txt. Remember to update api/news.json and upload the article .txt on the server.';
-        } else {
-            newsData.push(item);
-            msg = 'Added. Downloading updated news.json and article .txt. Remember to update api/news.json and upload the article .txt on the server.';
-        }
-        renderNewsList();
-        this.reset();
-        document.getElementById('edit-index').value = '';
-        document.getElementById('news-save-btn').textContent = 'Save/Update & Download';
-        document.getElementById('news-admin-msg').textContent = msg;
-
-        // Merge with existing news.json from server (api/news.json)
-        let mergedNews = [];
-        try {
-            const res = await fetch('api/news.json?v=' + Date.now());
-            if (res.ok) {
-                const serverNews = await res.json();
-                // Merge: keep all unique entries by title+date, prefer local (edited) version if duplicate
-                const map = new Map();
-                for (const entry of serverNews) {
-                    if (entry.title && entry.date) {
-                        map.set(entry.title + '|' + entry.date, entry);
-                    }
-                }
-                for (const entry of newsData) {
-                    if (entry.title && entry.date) {
-                        map.set(entry.title + '|' + entry.date, entry);
-                    }
-                }
-                mergedNews = Array.from(map.values());
+        // Replace form submit logic to merge old news.json and download updated news.json and article .txt
+        document.getElementById('news-admin-form').onsubmit = async function(e) {
+            e.preventDefault();
+            const idx = document.getElementById('edit-index').value;
+            const item = {
+                title: document.getElementById('news-title').value,
+                date: document.getElementById('news-date').value,
+                image: document.getElementById('news-image').value,
+                category: document.getElementById('news-category').value,
+                summary: document.getElementById('news-summary').value,
+                markdown: document.getElementById('news-markdown').value,
+                article: document.getElementById('news-article').value
+            };
+            let msg = '';
+            if (idx !== '' && !isNaN(idx)) {
+                newsData[idx] = item;
+                msg = 'Updated. Downloading updated news.json and article .txt. Remember to update api/news.json and upload the article .txt on the server.';
             } else {
+                newsData.push(item);
+                msg = 'Added. Downloading updated news.json and article .txt. Remember to update api/news.json and upload the article .txt on the server.';
+            }
+            renderNewsList();
+            this.reset();
+            document.getElementById('edit-index').value = '';
+            document.getElementById('news-save-btn').textContent = 'Save/Update & Download';
+            document.getElementById('news-admin-msg').textContent = msg;
+
+            // Merge with existing news.json from server (api/news.json)
+            let mergedNews = [];
+            try {
+                const res = await fetch('api/news.json?v=' + Date.now());
+                if (res.ok) {
+                    const serverNews = await res.json();
+                    // Merge: keep all unique entries by title+date, prefer local (edited) version if duplicate
+                    const map = new Map();
+                    for (const entry of serverNews) {
+                        if (entry.title && entry.date) {
+                            map.set(entry.title + '|' + entry.date, entry);
+                        }
+                    }
+                    for (const entry of newsData) {
+                        if (entry.title && entry.date) {
+                            map.set(entry.title + '|' + entry.date, entry);
+                        }
+                    }
+                    mergedNews = Array.from(map.values());
+                } else {
+                    mergedNews = [...newsData];
+                }
+            } catch {
                 mergedNews = [...newsData];
             }
-        } catch {
-            mergedNews = [...newsData];
-        }
 
-        // Download merged news.json
-        const dataStr = JSON.stringify(mergedNews, null, 2);
-        const blob = new Blob([dataStr], {type: "application/json"});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = "news.json";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+            // Download merged news.json
+            const dataStr = JSON.stringify(mergedNews, null, 2);
+            const blob = new Blob([dataStr], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "news.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
 
-        // Download article as .txt
-        const title = item.title.trim();
-        const markdownPath = item.markdown.trim();
-        const article = item.article;
-        if (article) {
+            // Download article as .txt
+            const title = item.title.trim();
+            const markdownPath = item.markdown.trim();
+            const article = item.article;
+            if (article) {
+                let filename = 'article.txt';
+                if (markdownPath) {
+                    filename = markdownPath.split('/').pop().replace(/\.[^/.]+$/, '') + '.txt';
+                } else if (title) {
+                    filename = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') + '.txt';
+                }
+                const articleBlob = new Blob([article], {type: "text/plain"});
+                const articleUrl = URL.createObjectURL(articleBlob);
+                const articleA = document.createElement('a');
+                articleA.href = articleUrl;
+                articleA.download = filename;
+                document.body.appendChild(articleA);
+                articleA.click();
+                document.body.removeChild(articleA);
+                URL.revokeObjectURL(articleUrl);
+            }
+        };
+
+        document.getElementById('news-cancel-btn').onclick = function() {
+            document.getElementById('news-admin-form').reset();
+            document.getElementById('edit-index').value = '';
+            document.getElementById('news-save-btn').textContent = 'Save Post';
+            document.getElementById('news-admin-msg').textContent = '';
+        };
+
+        // Fix: Correct download button IDs and handlers
+        document.getElementById('download-news_json').onclick = function() {
+            const dataStr = JSON.stringify(newsData, null, 2);
+            const blob = new Blob([dataStr], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "news.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        };
+
+        document.getElementById('download-article-md').onclick = function() {
+            const title = document.getElementById('news-title').value.trim();
+            const markdownPath = document.getElementById('news-markdown').value.trim();
+            const article = document.getElementById('news-article').value;
+            if (!article) {
+                alert('No article content to download.');
+                return;
+            }
             let filename = 'article.txt';
             if (markdownPath) {
                 filename = markdownPath.split('/').pop().replace(/\.[^/.]+$/, '') + '.txt';
             } else if (title) {
                 filename = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') + '.txt';
             }
-            const articleBlob = new Blob([article], {type: "text/plain"});
-            const articleUrl = URL.createObjectURL(articleBlob);
-            const articleA = document.createElement('a');
-            articleA.href = articleUrl;
-            articleA.download = filename;
-            document.body.appendChild(articleA);
-            articleA.click();
-            document.body.removeChild(articleA);
-            URL.revokeObjectURL(articleUrl);
+            const blob = new Blob([article], {type: "text/plain"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        };
+
+        // Insert Markdown image link at cursor position in article textarea
+        document.getElementById('news-article-image').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const textarea = document.getElementById('news-article');
+            // Use just the filename for the Markdown path
+            const mdImage = `![${file.name}](Files/${file.name})`;
+            // Insert at cursor position
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const before = textarea.value.substring(0, start);
+            const after = textarea.value.substring(end);
+            textarea.value = before + mdImage + after;
+            // Move cursor after inserted text
+            textarea.selectionStart = textarea.selectionEnd = start + mdImage.length;
+            textarea.focus();
+            // Reset file input so same file can be selected again if needed
+            e.target.value = '';
+        });
+
+        window.editNews = editNews;
+        window.deleteNews = deleteNews;
+
+        window.addEventListener('DOMContentLoaded', loadNewsAdmin);
+        </script>
+        <script>
+        // Password protection logic (now disables ALL page content until unlocked)
+        (function() {
+            const PASSWORD_HASH = '6270bbe29465ff78a58fc83fa5ed3424b7d100c3ed98344417cf3ea7d25abf6c';
+            const overlay = document.getElementById('admin-password-overlay');
+            const form = document.getElementById('admin-password-form');
+            const input = document.getElementById('admin-password-input');
+            const msg = document.getElementById('admin-password-msg');
+            const adminContent = document.getElementById('admin-content');
+
+            async function sha256(str) {
+                const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+                return Array.from(new Uint8Array(buf)).map(x => x.toString(16).padStart(2, '0')).join('');
+            }
+
+            // Hide all admin content until unlocked
+            adminContent.style.display = 'none';
+
+            // Check if already unlocked in this session
+            if (sessionStorage.getItem('admin-unlocked') === '1') {
+                overlay.style.display = 'none';
+                adminContent.style.display = '';
+            }
+
+            form.onsubmit = async function(e) {
+                e.preventDefault();
+                msg.textContent = '';
+                const val = input.value;
+                if (!val) return;
+                msg.textContent = 'Checking...';
+                const hash = await sha256(val);
+                if (hash === PASSWORD_HASH) {
+                    overlay.style.display = 'none';
+                    adminContent.style.display = '';
+                    sessionStorage.setItem('admin-unlocked', '1');
+                } else {
+                    msg.textContent = 'Incorrect password.';
+                    input.value = '';
+                    input.focus();
+                }
+            };
+        })();
+        </script>
+        <script>
+          document.getElementById('main-css').href = 'style.css?v=' + window.CACHE_VERSION;
+        </script>
+        <script src="fade-in.js?v=" id="fade-in-js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+    // Custom dropdown for image selection
+    let imageListCache = [];
+    async function populateImageList() {
+        try {
+            const res = await fetch('Files/files.json?v=' + Date.now());
+            const files = await res.json();
+            imageListCache = files.filter(name => /\.(jpe?g|png|gif|webp|bmp|svg)$/i.test(name));
+        } catch (e) {
+            imageListCache = [];
         }
-    };
-
-    document.getElementById('news-cancel-btn').onclick = function() {
-        document.getElementById('news-admin-form').reset();
-        document.getElementById('edit-index').value = '';
-        document.getElementById('news-save-btn').textContent = 'Save Post';
-        document.getElementById('news-admin-msg').textContent = '';
-    };
-
-    // Fix: Correct download button IDs and handlers
-    document.getElementById('download-news_json').onclick = function() {
-        const dataStr = JSON.stringify(newsData, null, 2);
-        const blob = new Blob([dataStr], {type: "application/json"});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = "news.json";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    };
-
-    document.getElementById('download-article-md').onclick = function() {
-        const title = document.getElementById('news-title').value.trim();
-        const markdownPath = document.getElementById('news-markdown').value.trim();
-        const article = document.getElementById('news-article').value;
-        if (!article) {
-            alert('No article content to download.');
+    }
+    function showImageDropdown(filter = "") {
+        const dropdown = document.getElementById('news-image-dropdown');
+        dropdown.innerHTML = '';
+        if (!imageListCache.length) {
+            dropdown.style.display = 'none';
             return;
         }
-        let filename = 'article.txt';
-        if (markdownPath) {
-            filename = markdownPath.split('/').pop().replace(/\.[^/.]+$/, '') + '.txt';
-        } else if (title) {
-            filename = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') + '.txt';
-        }
-        const blob = new Blob([article], {type: "text/plain"});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    };
-
-    // Insert Markdown image link at cursor position in article textarea
-    document.getElementById('news-article-image').addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (!file) return;
-        const textarea = document.getElementById('news-article');
-        // Use just the filename for the Markdown path
-        const mdImage = `![${file.name}](Files/${file.name})`;
-        // Insert at cursor position
-        const start = textarea.selectionStart;
-        const end = textarea.selectionEnd;
-        const before = textarea.value.substring(0, start);
-        const after = textarea.value.substring(end);
-        textarea.value = before + mdImage + after;
-        // Move cursor after inserted text
-        textarea.selectionStart = textarea.selectionEnd = start + mdImage.length;
-        textarea.focus();
-        // Reset file input so same file can be selected again if needed
-        e.target.value = '';
-    });
-
-    window.editNews = editNews;
-    window.deleteNews = deleteNews;
-
-    window.addEventListener('DOMContentLoaded', loadNewsAdmin);
-    </script>
-    <script>
-    // Password protection logic
-    (function() {
-        // This hash is SHA-256 of the password (replace with your own hash)
-        const PASSWORD_HASH = '6270bbe29465ff78a58fc83fa5ed3424b7d100c3ed98344417cf3ea7d25abf6c'; // example: "password"
-        const overlay = document.getElementById('admin-password-overlay');
-        const form = document.getElementById('admin-password-form');
-        const input = document.getElementById('admin-password-input');
-        const msg = document.getElementById('admin-password-msg');
-
-        // Utility: SHA-256 hash as hex
-        async function sha256(str) {
-            const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-            return Array.from(new Uint8Array(buf)).map(x => x.toString(16).padStart(2, '0')).join('');
-        }
-
-        // Check if already unlocked in this session
-        if (sessionStorage.getItem('admin-unlocked') === '1') {
-            overlay.style.display = 'none';
-        }
-
-        form.onsubmit = async function(e) {
-            e.preventDefault();
-            msg.textContent = '';
-            const val = input.value;
-            if (!val) return;
-            msg.textContent = 'Checking...';
-            const hash = await sha256(val);
-            if (hash === PASSWORD_HASH) {
-                overlay.style.display = 'none';
-                sessionStorage.setItem('admin-unlocked', '1');
-            } else {
-                msg.textContent = 'Incorrect password.';
-                input.value = '';
-                input.focus();
-            }
-        };
-    })();
-    </script>
-    <script>
-      document.getElementById('main-css').href = 'style.css?v=' + window.CACHE_VERSION;
-    </script>
-    <script src="fade-in.js?v=" id="fade-in-js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-// Custom dropdown for image selection
-let imageListCache = [];
-async function populateImageList() {
-    try {
-        const res = await fetch('Files/files.json?v=' + Date.now());
-        const files = await res.json();
-        imageListCache = files.filter(name => /\.(jpe?g|png|gif|webp|bmp|svg)$/i.test(name));
-    } catch (e) {
-        imageListCache = [];
-    }
-}
-function showImageDropdown(filter = "") {
-    const dropdown = document.getElementById('news-image-dropdown');
-    dropdown.innerHTML = '';
-    if (!imageListCache.length) {
-        dropdown.style.display = 'none';
-        return;
-    }
-    const matches = imageListCache.filter(name => name.toLowerCase().includes(filter.toLowerCase()));
-    if (!matches.length) {
-        dropdown.style.display = 'none';
-        return;
-    }
-    for (const name of matches) {
-        const li = document.createElement('li');
-        li.className = 'list-group-item list-group-item-action';
-        li.textContent = name;
-        li.onclick = function() {
-            document.getElementById('news-image').value = 'Files/' + name;
+        const matches = imageListCache.filter(name => name.toLowerCase().includes(filter.toLowerCase()));
+        if (!matches.length) {
             dropdown.style.display = 'none';
-        };
-        dropdown.appendChild(li);
-    }
-    dropdown.style.display = 'block';
-}
-function hideImageDropdown() {
-    document.getElementById('news-image-dropdown').style.display = 'none';
-}
-
-window.addEventListener('DOMContentLoaded', function() {
-    populateImageList();
-    document.getElementById('refresh-image-list').onclick = populateImageList;
-
-    const input = document.getElementById('news-image');
-    const dropdown = document.getElementById('news-image-dropdown');
-    input.addEventListener('focus', function() {
-        showImageDropdown(input.value);
-    });
-    input.addEventListener('input', function() {
-        showImageDropdown(input.value);
-    });
-    input.addEventListener('blur', function() {
-        setTimeout(hideImageDropdown, 150); // Delay so click can register
-    });
-    // Optional: allow keyboard navigation
-    input.addEventListener('keydown', function(e) {
-        if (e.key === "ArrowDown") {
-            const first = dropdown.querySelector('li');
-            if (first) first.focus();
+            return;
         }
+        for (const name of matches) {
+            const li = document.createElement('li');
+            li.className = 'list-group-item list-group-item-action';
+            li.textContent = name;
+            li.onclick = function() {
+                document.getElementById('news-image').value = 'Files/' + name;
+                dropdown.style.display = 'none';
+            };
+            dropdown.appendChild(li);
+        }
+        dropdown.style.display = 'block';
+    }
+    function hideImageDropdown() {
+        document.getElementById('news-image-dropdown').style.display = 'none';
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+        populateImageList();
+        document.getElementById('refresh-image-list').onclick = populateImageList;
+
+        const input = document.getElementById('news-image');
+        const dropdown = document.getElementById('news-image-dropdown');
+        input.addEventListener('focus', function() {
+            showImageDropdown(input.value);
+        });
+        input.addEventListener('input', function() {
+            showImageDropdown(input.value);
+        });
+        input.addEventListener('blur', function() {
+            setTimeout(hideImageDropdown, 150); // Delay so click can register
+        });
+        // Optional: allow keyboard navigation
+        input.addEventListener('keydown', function(e) {
+            if (e.key === "ArrowDown") {
+                const first = dropdown.querySelector('li');
+                if (first) first.focus();
+            }
+        });
     });
-});
-    </script>
+        </script>
+    </div>
 </body>
 </html>
