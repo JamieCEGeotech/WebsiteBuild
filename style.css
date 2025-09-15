@@ -391,7 +391,7 @@ nav a:focus {
 .top-bar {
     width: 100%;    /* <-- Fix */
     height: 45px;
-    background: #43a3d3;
+    background: #2a6786;
     margin: 0;
     padding: 0;
     position: fixed;
@@ -418,7 +418,7 @@ nav a:focus {
 }
 .top-bar-contact-btn:hover,
 .top-bar-contact-btn:focus {
-    background: #3a6ca8;
+    background: #43a3d3; /* lighter blue */
     color: #fff;
 }
 
@@ -431,7 +431,7 @@ footer {
     border-top: 2px solid #eee;
 }
 footer a {
-    color: #43a3d3;
+    color: #2a6786;
     text-decoration: none;
     font-weight: bold;
 }
@@ -440,7 +440,7 @@ footer a:focus {
     color: #222;
 }
 .footer-bottom {
-    background: #43a3d3;
+    background: #2a6786;
     color: #fff;
     border-top: 1px solid rgba(255,255,255,0.2);
     margin-top: 0;
