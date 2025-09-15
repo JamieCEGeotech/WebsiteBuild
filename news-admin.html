@@ -78,10 +78,10 @@
                         <div class="mb-2">
                             <label for="news-image" class="form-label">Image Path</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="news-image" placeholder="Files/your-image.jpg" list="news-image-list">
-                                <datalist id="news-image-list"></datalist>
+                                <input type="text" class="form-control" id="news-image" placeholder="Files/your-image.jpg" autocomplete="off">
                                 <button type="button" class="btn btn-outline-secondary" id="refresh-image-list" title="Refresh image list">&#x21bb;</button>
                             </div>
+                            <ul id="news-image-dropdown" class="list-group position-absolute" style="z-index:1000; display:none; max-height:200px; overflow-y:auto; width:100%;"></ul>
                         </div>
                         <div class="mb-2">
                             <label for="news-category" class="form-label">Category</label>
@@ -388,5 +388,69 @@
     <script src="fade-in.js?v=" id="fade-in-js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+// Custom dropdown for image selection
+let imageListCache = [];
+async function populateImageList() {
+    try {
+        const res = await fetch('Files/files.json?v=' + Date.now());
+        const files = await res.json();
+        imageListCache = files.filter(name => /\.(jpe?g|png|gif|webp|bmp|svg)$/i.test(name));
+    } catch (e) {
+        imageListCache = [];
+    }
+}
+function showImageDropdown(filter = "") {
+    const dropdown = document.getElementById('news-image-dropdown');
+    dropdown.innerHTML = '';
+    if (!imageListCache.length) {
+        dropdown.style.display = 'none';
+        return;
+    }
+    const matches = imageListCache.filter(name => name.toLowerCase().includes(filter.toLowerCase()));
+    if (!matches.length) {
+        dropdown.style.display = 'none';
+        return;
+    }
+    for (const name of matches) {
+        const li = document.createElement('li');
+        li.className = 'list-group-item list-group-item-action';
+        li.textContent = name;
+        li.onclick = function() {
+            document.getElementById('news-image').value = 'Files/' + name;
+            dropdown.style.display = 'none';
+        };
+        dropdown.appendChild(li);
+    }
+    dropdown.style.display = 'block';
+}
+function hideImageDropdown() {
+    document.getElementById('news-image-dropdown').style.display = 'none';
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+    populateImageList();
+    document.getElementById('refresh-image-list').onclick = populateImageList;
+
+    const input = document.getElementById('news-image');
+    const dropdown = document.getElementById('news-image-dropdown');
+    input.addEventListener('focus', function() {
+        showImageDropdown(input.value);
+    });
+    input.addEventListener('input', function() {
+        showImageDropdown(input.value);
+    });
+    input.addEventListener('blur', function() {
+        setTimeout(hideImageDropdown, 150); // Delay so click can register
+    });
+    // Optional: allow keyboard navigation
+    input.addEventListener('keydown', function(e) {
+        if (e.key === "ArrowDown") {
+            const first = dropdown.querySelector('li');
+            if (first) first.focus();
+        }
+    });
+});
+    </script>
 </body>
 </html>
