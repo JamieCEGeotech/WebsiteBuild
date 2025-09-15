@@ -77,7 +77,11 @@
                         </div>
                         <div class="mb-2">
                             <label for="news-image" class="form-label">Image Path</label>
-                            <input type="text" class="form-control" id="news-image" placeholder="Files/your-image.jpg">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="news-image" placeholder="Files/your-image.jpg" list="news-image-list">
+                                <datalist id="news-image-list"></datalist>
+                                <button type="button" class="btn btn-outline-secondary" id="refresh-image-list" title="Refresh image list">&#x21bb;</button>
+                            </div>
                         </div>
                         <div class="mb-2">
                             <label for="news-category" class="form-label">Category</label>
