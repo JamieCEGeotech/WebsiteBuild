@@ -1,5 +1,5 @@
 // Global cookie consent key for easy updates
-window.COOKIE_CONSENT_KEY = 'cookie_consent-v2';
+window.COOKIE_CONSENT_KEY = 'cookie_consent-v3';
 
 // Helper to inject the cookie consent modal if not present
 window.injectCookieConsent = function(options = {}) {
