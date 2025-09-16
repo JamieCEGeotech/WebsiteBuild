@@ -27,6 +27,31 @@
     </script>
     <link rel="stylesheet" href="style.css?v=" id="main-css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+      /* Toggle menu underline effect for active and hover */
+      .navbar-nav .nav-link {
+        position: relative;
+      }
+      .navbar-nav .nav-link.active::after,
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .nav-link:focus::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+      .navbar-nav .nav-link::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 2px;
+        background: #43a3d3;
+        border-radius: 2px;
+        opacity: 0;
+        transform: scaleX(0);
+        transition: opacity 0.2s, transform 0.3s cubic-bezier(.4,0,.2,1);
+        pointer-events: none;
+      }
+    </style>
     
 </head>
 <body>
@@ -447,10 +472,10 @@
       document.addEventListener('DOMContentLoaded', function() {
         var params = new URLSearchParams(window.location.search);
         var view = params.get('view');
-        if (view === 'site') {
-          showSite();
-        } else {
+        if (view === 'lab') {
           showLab();
+        } else {
+          showSite();
         }
       });
     </script>
