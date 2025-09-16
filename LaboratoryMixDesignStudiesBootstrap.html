@@ -46,7 +46,7 @@
             </div>
             <nav class="header-nav d-flex gap-3">
                 <a class="nav-link px-2" href="index.html">Home</a>
-                <a class="nav-link px-2 active" href="LaboratoryMixDesignStudiesBootstrap.html">Laboratory Mix Design Studies</a>
+                <a class="nav-link px-2 active" href="LaboratoryMixDesignStudiesBootstrap.html">What We Do</a>
                 <a class="nav-link px-2" href="contact.html">Contact</a>
                 <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
                 <a class="nav-link px-2" href="news.html">News</a>
@@ -68,48 +68,281 @@
             </div>
         </div>
     </section>
+    <!-- Bootstrap Toggle Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <div class="container">
+        <ul class="navbar-nav mx-auto flex-row gap-2">
+          <li class="nav-item">
+            <a class="nav-link" id="siteMenuBtn" href="#" onclick="showSite(); return false;">Site Testing Services</a>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="labMenuBtn" href="#" onclick="showLab(); return false;">Laboratory Mix Design Studies</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- Main Content -->
     <main class="section fade-in py-5" id="lab-mix-design">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Text Content -->
-                <div class="col-12 col-lg-7">
-                    <h2 class="mb-3">What We Offer</h2>
-                    <p>
-                        CE Geotech provides tailored laboratory mix design studies to meet your project’s technical and performance requirements. Our laboratory team delivers comprehensive characterisation and optimisation of hydraulically bound materials for ground engineering.
-                    </p>
-                    <h4 class="mt-4 mb-2">Materials Characterisation Includes:</h4>
-                    <ul>
-                        <li>Optimum Moisture Content &amp; Maximum Dry Density (OMC-MDD) – BS EN 13286-4:2003, BS 1377-4:1990</li>
-                        <li>Moisture Condition Value (MCV Range) – BS EN 13286-46:2003</li>
-                        <li>BRE-SD1 Sulphate Suite</li>
-                        <li>Particle Size Distribution (PSD) Wet/Dry – BS 1377-2:1990</li>
-                        <li>Plasticity Index – BS 1377-2:1990</li>
-                        <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
-                    </ul>
-                    <h4 class="mt-4 mb-2">Assessment of Strength/Stiffness:</h4>
-                    <ul>
-                        <li>California Bearing Ratio (CBR) and Immediate Bearing Index (IBI) – BS EN 13286-47:2012, BS 1377-4:1990</li>
-                        <li>CBR Swell - BS EN 13286-47:2012, BS 1377-4:1990</li>
-                        <li>Accelerated Swell Testing BS EN 13286-49:2004</li>
-                        <li>Loss of Strength on Immersion SHW Series 800</li>
-                        <li>Unconfined Compressive Strength - BS EN 13286-41:2004</li>
-                        <li>Elastic Modulus - BS EN 13286-43: 2003</li>
-                        <li>Quick Undrained Triaxial – BS 1377-7:1990</li>
-                        <li>Permeability (Falling Head) - K H Head:2011</li>
-                    </ul>
-                    <a href="contact.html" class="service-btn">Contact Us</a>
+            <div id="labContent" class="fade-section">
+                <div class="row align-items-center g-5">
+                    <!-- Text Content -->
+                    <div class="col-12 col-lg-7">
+                        <h2 class="mb-3">What We Offer</h2>
+                        <p>
+                            CE Geotech provides tailored laboratory mix design studies to meet your project’s technical and performance requirements. Our laboratory team delivers comprehensive characterisation and optimisation of hydraulically bound materials for ground engineering.
+                        </p>
+                        <h4 class="mt-4 mb-2">Materials Characterisation Includes:</h4>
+                        <ul>
+                            <li>Optimum Moisture Content &amp; Maximum Dry Density (OMC-MDD) – BS EN 13286-4:2003, BS 1377-4:1990</li>
+                            <li>Moisture Condition Value (MCV Range) – BS EN 13286-46:2003</li>
+                            <li>BRE-SD1 Sulphate Suite</li>
+                            <li>Particle Size Distribution (PSD) Wet/Dry – BS 1377-2:1990</li>
+                            <li>Plasticity Index – BS 1377-2:1990</li>
+                            <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
+                        </ul>
+                        <h4 class="mt-4 mb-2">Assessment of Strength/Stiffness:</h4>
+                        <ul>
+                            <li>California Bearing Ratio (CBR) and Immediate Bearing Index (IBI) – BS EN 13286-47:2012, BS 1377-4:1990</li>
+                            <li>CBR Swell - BS EN 13286-47:2012, BS 1377-4:1990</li>
+                            <li>Accelerated Swell Testing BS EN 13286-49:2004</li>
+                            <li>Loss of Strength on Immersion SHW Series 800</li>
+                            <li>Unconfined Compressive Strength - BS EN 13286-41:2004</li>
+                            <li>Elastic Modulus - BS EN 13286-43: 2003</li>
+                            <li>Quick Undrained Triaxial – BS 1377-7:1990</li>
+                            <li>Permeability (Falling Head) - K H Head:2011</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    </div>
+                    <!-- Image/Visual -->
+                    <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                        <div class="rounded shadow overflow-hidden" style="background: #e0e6ed;">
+                            <img src="Files/IMG_0094.JPG" alt="Laboratory Mix Design" class="img-fluid w-100" style="object-fit:cover; min-height:320px;">
+                        </div>
+                    </div>
                 </div>
-                <!-- Image/Visual -->
-                <div class="col-12 col-lg-5 mb-4 mb-lg-0">
-                    <div class="rounded shadow overflow-hidden" style="background: #e0e6ed;">
-                        <img src="Files/IMG_0094.JPG" alt="Laboratory Mix Design" class="img-fluid w-100" style="object-fit:cover; min-height:320px;">
+            </div>
+            <div id="siteContent" class="fade-section" style="display:none;">
+                <div class="row align-items-center g-5">
+                    <div class="col-12 col-lg-7">
+                        <h2 class="mb-3">Site Investigation Services</h2>
+                        <p>
+                            Any ground engineering project starts with a robust understanding of site conditions and site abnormals.
+                            Soil stabilisation relies on the ability of hydraulic binders to improve the mechanical performance of soils.
+                            The success of soil stabilisation as a ground improvement technique is governed by the interaction of the binder phase with the soil matrix.
+                            Identifying representative soil samples at the site investigation stage is critical to the delivery of any soil stabilisation design.
+                        </p>
+                        <p>
+                            Our site investigation package includes an assessment of sub-grade strength, crucial for identifying suitable layer design.
+                        </p>
+                        <h4 class="mt-4 mb-2">Our site services include:</h4>
+                        <ul>
+                            <li>Site Sampling and Trial Pit Logging - BS EN 5930: 2015</li>
+                            <li>Dynamic Cone Penetrometer Probe Holing Survey – CS 229</li>
+                            <li>Light Weight Deflectometer (LWD) - Prima 100 – IAN 73/06</li>
+                            <li>Plate Load Testing (PLT) BS 1377 1990: Part 9</li>
+                            <li>Rapid On-site Sulphur Survey by Portable XRF – USEPA 6200</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    </div>
+                    <div class="col-12 col-lg-5 mb-4 mb-lg-0">
+                        <div class="rounded shadow overflow-hidden" style="background: #e0e6ed;">
+                            <img src="Files/IMG_0130.JPG" alt="Site Investigation" class="img-fluid w-100" style="object-fit:cover; min-height:320px;">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Capabilities at a glance -->
+    <section class="section fade-in py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center mb-4">Capabilities at a glance</h2>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h3 class="h5">Specialist Labs</h3>
+                <p class="mb-0">Purpose-built facilities for soil stabilisation trials and performance testing.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h3 class="h5">Project‑Focused</h3>
+                <p class="mb-0">Geotechnical test work programmes tailored to your specification.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h3 class="h5">On‑Site Labs</h3>
+                <p class="mb-0">Control and validation testing delivered on site to keep programmes moving.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h3 class="h5">Proven Delivery</h3>
+                <p class="mb-0">Experience across 200+ successful stabilisation projects.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core test suites (kept concise via accordion) -->
+    <section class="section fade-in py-5" id="core-tests">
+      <div class="container">
+        <h2 class="mb-3">Core Test Suites</h2>
+        <p class="mb-4">A concise view of the most requested testing. Full schedules are available on request.</p>
+
+        <div class="accordion" id="testSuites">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingControl">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#controlTests" aria-expanded="true" aria-controls="controlTests">
+                Earthworks Control Testing (On‑Site)
+              </button>
+            </h2>
+            <div id="controlTests" class="accordion-collapse collapse show" aria-labelledby="headingControl" data-bs-parent="#testSuites">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                  <li>Moisture Content (BS 1377 microwave method)</li>
+                  <li>Degree of Pulverisation (DOP) – BS EN 13286‑48</li>
+                  <li>Depth Check and Spread Rate confirmation</li>
+                  <li>Moisture Condition Value (MCV) – BS 13286‑46</li>
+                  <li>Dynamic Cone Penetrometer – CS229</li>
+                  <li>In‑Situ Density by sand replacement/core cutter – BS 1377‑9</li>
+                  <li>Chemical checks: Total Potential Sulphate (TPS) and Organic Matter</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingValidation">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#validationTests" aria-expanded="false" aria-controls="validationTests">
+                Validation Testing (On‑Site)
+              </button>
+            </h2>
+            <div id="validationTests" class="accordion-collapse collapse" aria-labelledby="headingValidation" data-bs-parent="#testSuites">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                  <li>CBR by Incremental Plate Loading – BS 1377‑9</li>
+                  <li>Maximum Applied Stress by Incremental Loading – BS 1377‑9</li>
+                  <li>Light Weight Deflectometer (LWD) – IAN 73/06</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingLabStrength">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#labStrength" aria-expanded="false" aria-controls="labStrength">
+                Laboratory Classification, Strength & Stiffness
+              </button>
+            </h2>
+            <div id="labStrength" class="accordion-collapse collapse" aria-labelledby="headingLabStrength" data-bs-parent="#testSuites">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                  <li>OMC/MDD (BS EN 13286‑4) and MCV Range (BS EN 13286‑46)</li>
+                  <li>CBR/IBI (BS EN 13286‑47, BS 1377‑4) and CBR Swell</li>
+                  <li>Unconfined Compressive Strength – BS EN 13286‑41</li>
+                  <li>Elastic Modulus – BS EN 13286‑43</li>
+                  <li>Quick Undrained Triaxial – BS 1377‑7</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingChem">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chemTests" aria-expanded="false" aria-controls="chemTests">
+                Laboratory Chemical Testing
+              </button>
+            </h2>
+            <div id="chemTests" class="accordion-collapse collapse" aria-labelledby="headingChem" data-bs-parent="#testSuites">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                  <li>BRE SD1 sulphate suite and pH</li>
+                  <li>Organic Matter, Chloride, Conductivity</li>
+                  <li>Top Soil Specification (BS 3882) and nutrient status</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="contact.html" class="btn btn-primary">Discuss a test schedule</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sulphate Induced Heave -->
+    <section class="section fade-in py-5 bg-light" id="sulphate-heave">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-7">
+            <h2 class="mb-3">Sulphate Induced Heave Studies</h2>
+            <p>Advanced sulphate assessment to de‑risk stabilised soil designs and construction.</p>
+            <ul>
+              <li>Rapid TPS by portable X‑Ray Fluorescence (pXRF)</li>
+              <li>3D sub‑surface TPS modelling for risk zoning</li>
+              <li>Ettringite identification by X‑Ray Diffraction</li>
+              <li>28‑day soaked CBR swell (BS EN 13286‑47)</li>
+              <li>7‑day Accelerated Swell (BS EN 13286‑49)</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">Ask about sulphate screening</a>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="rounded shadow overflow-hidden">
+              <img src="Files/IMG_0130.JPG" alt="Portable XRF sulphur survey" class="img-fluid w-100" style="object-fit:cover; min-height:320px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How we deliver -->
+    <section class="section fade-in py-5">
+      <div class="container">
+        <h2 class="mb-4">How we deliver</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h5">1) Site Investigation</h3>
+                <p class="mb-0">Representative sampling, DCP, LWD/PLT and rapid sulphur screening to define materials and risk.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h5">2) Mix Design</h3>
+                <p class="mb-0">Laboratory optimisation of binder type and content to meet stiffness, strength and durability targets.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="h5">3) Control & Validation</h3>
+                <p class="mb-0">On‑site control testing and validation to specification, enabling confident production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Optional: Callout Section -->
     <section class="section fade-in py-5 bg-light">
@@ -178,5 +411,48 @@
     <script src="fade-in.js?v=" id="fade-in-js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Toggle content using external fade-in.js
+      function fadeSwap(showId, hideId) {
+        const showEl = document.getElementById(showId);
+        const hideEl = document.getElementById(hideId);
+
+        if (typeof fadeOut === 'function' && typeof fadeIn === 'function') {
+          fadeOut(hideEl, 500, function() {
+            hideEl.style.display = 'none';
+            showEl.style.opacity = 0;
+            showEl.style.display = '';
+            setTimeout(function() {
+              fadeIn(showEl, 500);
+            }, 10);
+          });
+        } else {
+          hideEl.style.display = 'none';
+          showEl.style.display = '';
+        }
+      }
+
+      function showLab() {
+        fadeSwap('labContent', 'siteContent');
+        document.getElementById('labMenuBtn').classList.add('active');
+        document.getElementById('siteMenuBtn').classList.remove('active');
+      }
+      function showSite() {
+        fadeSwap('siteContent', 'labContent');
+        document.getElementById('labMenuBtn').classList.remove('active');
+        document.getElementById('siteMenuBtn').classList.add('active');
+      }
+
+      // Show correct section based on query param
+      document.addEventListener('DOMContentLoaded', function() {
+        var params = new URLSearchParams(window.location.search);
+        var view = params.get('view');
+        if (view === 'site') {
+          showSite();
+        } else {
+          showLab();
+        }
+      });
+    </script>
 </body>
 </html>
