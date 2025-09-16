@@ -28,26 +28,6 @@
       // Global cache version variable
       window.CACHE_VERSION = '1';
     </script>
-    <style>
-      @media (min-width: 992px) {
-        .navbar-nav .dropdown:hover .dropdown-menu {
-          display: block;
-        }
-        .navbar-nav .dropdown-menu {
-          margin-top: 0;
-        }
-      }
-      /* Use Bootstrap's w-100 utility for full width dropdown */
-      .navbar-nav .dropdown-menu {
-        min-width: 0;
-        width: 100%;
-        box-sizing: border-box;
-      }
-      .navbar-nav .dropdown-item {
-        text-align: center;
-        white-space: nowrap;
-      }
-    </style>
 </head>
 <body>
     <script src="cookie-consent.js?v=1"></script>
@@ -63,27 +43,13 @@
                     <img src="Files/Geotech logo + Tagline RGB 300px.jpg" alt="CE Geotech Logo" loading="eager" style="max-height:70px;">
                 </a>
             </div>
-            <nav class="header-nav navbar navbar-expand-lg">
-  <div class="container-fluid p-0">
-    <ul class="navbar-nav d-flex flex-row gap-3">
-      <li class="nav-item">
-        <a class="nav-link px-2 active" href="index.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">What We Do</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-2" href="contact.html">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-2" href="news.html">News</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+            <nav class="header-nav d-flex gap-3">
+                <a class="nav-link px-2 active" href="index.html">Home</a>
+                <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">What We Do</a>
+                <a class="nav-link px-2" href="contact.html">Contact</a>
+                <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
+                <a class="nav-link px-2" href="news.html">News</a>
+            </nav>
         </div>
     </header>
 
@@ -231,7 +197,7 @@
               <br><br>
               Through years of experience on site, our engineers not only provide timely and robust data for stabilisation control, but can also assist with the interpretation of challenging site conditions.
             </p>
-            <a href="LaboratoryMixDesignStudiesBootstrap.html?view=site" class="service-btn">Learn More</a>
+            <a href="LaboratoryMixDesignStudiesBootstrap.html" class="service-btn">Learn More</a>
           </div>
         </div>
       </div>
@@ -263,7 +229,7 @@
               <li>Plasticity Index – BS 1377-2: 1990</li>
               <li>Lime Demand – BS 1924-2 Clause 5.4:2018</li>
             </ul>
-            <a href="LaboratoryMixDesignStudiesBootstrap.html?view=lab" class="service-btn">Learn More</a>
+            <a href="LaboratoryMixDesignStudiesBootstrap.html" class="service-btn">Learn More</a>
           </div>
         </div>
       </div>
@@ -366,12 +332,16 @@
             CE Geotech is a multidisciplinary geotechnical solution provider for hydraulically bound material used in earth work stabilisation.
             <div class="copyright">
                 &copy; 2025 CE Geotech. All rights reserved.
+                <span class="mx-2">|</span>
+                <a href="modern-slavery.html" style="color:inherit;text-decoration:underline;">Modern Slavery Statement</a>
             </div>
         </div>
     </footer>
     <script>
       // Set cache version for CSS/JS includes
       document.getElementById('main-css').href = 'style.css?v=' + window.CACHE_VERSION;
+      // If you have other scripts to cache-bust, set their src here as well:
+      // document.getElementById('fade-in-js').src = 'fade-in.js?v=' + window.CACHE_VERSION;
     </script>
     <script src="fade-in.js?v=" id="fade-in-js"></script>
     <!-- Bootstrap JS -->
