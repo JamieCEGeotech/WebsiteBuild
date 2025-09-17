@@ -681,3 +681,8 @@ footer a:focus {
   --bs-btn-disabled-bg: #7fc3e0;
   --bs-btn-disabled-border-color: #7fc3e0;
 }
+
+/* Make Bootstrap carousel transitions slower */
+.carousel-item {
+  transition: transform 3s cubic-bezier(.4,0,.2,1), opacity 2s cubic-bezier(.4,0,.2,1);
+}
