@@ -414,6 +414,36 @@ nav a:focus {
   .service-fade-card { height: 380px; }
 }
 
+/* Make service cards taller and let content flow on small/mobile devices */
+@media (max-width: 768px) {
+  .service-fade-card {
+    height: auto;        /* allow natural height */
+    min-height: 480px;   /* taller to ensure content fits */
+    padding: 1rem;
+  }
+  .service-fade-front,
+  .service-fade-back {
+    position: relative;  /* switch away from absolute so content isn't clipped */
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    padding: 1.5rem;
+  }
+  .service-fade-card:hover .service-fade-front,
+  .service-fade-card:focus-within .service-fade-front {
+    opacity: 1;
+    visibility: visible;
+  }
+  .service-fade-card:hover .service-fade-back,
+  .service-fade-card:focus-within .service-fade-back {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 /* ====== News Banner ====== */
 .news-banner {
     background: #f6f8fa;
@@ -425,17 +455,17 @@ nav a:focus {
     margin-bottom: 2.5em;
 }
 .news-banner-inner {
-    display: flex;
-    align-items: stretch;
-    gap: 2em;
-    height: 200px;
+  display: flex;
+  align-items: stretch;
+  gap: 1rem; /* reduce gap so the image column has more space on desktop */
+  min-height: 180px; /* prefer flexible minimum height so desktop retains visual balance */
 }
 .news-banner-left {
-    flex: 1 1 0;
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 1rem; /* small spacing between text and image on desktop */
 }
 .news-banner-left h2 {
     color: #43a3d3;
@@ -447,39 +477,35 @@ nav a:focus {
     font-size: 1.1em;
 }
 .news-banner-right {
-    flex: 1 1 0;
-    max-width: 50%;
-    min-width: 220px;
-    height: 100%;
-    background: url('Files/002.jpg') center center/cover no-repeat, #e0e6ed;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
+  flex: 1 1 0;
+  min-width: 220px;
+  height: 100%;
+  /* use the higher-quality webp variant for modern browsers */
+  background: url('Files/002.webp') center center/cover no-repeat, #e0e6ed;
+  background-size: cover;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0; /* ensure no internal padding on desktop */
+  margin: 0;
+  overflow: hidden;
 }
 .news-banner-btn {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    background: #43a3d3;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 0.75em 2em;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
+  /* anchor used for positioning; visual styling moved to inner .service-btn */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background: transparent;
+  padding: 0;
 }
 .news-banner-btn:hover,
 .news-banner-btn:focus {
-    background: #368bb1;
+    /* anchor stays transparent; visual hover applied to inner .service-btn */
+    background: transparent;
 }
 .news-banner-right::before {
     content: "";
@@ -487,6 +513,95 @@ nav a:focus {
     inset: 0;
     background: rgba(67,163,211,0.18);
     z-index: 1;
+}
+
+/* Mobile adjustments: taller image and centered button */
+@media (max-width: 900px) {
+  .news-banner {
+    padding: 1em 0.75em;
+  }
+  .news-banner-inner {
+    flex-direction: column;
+    gap: 1em;
+    height: auto;
+  }
+  .news-banner-right {
+    width: 100%;
+    min-height: 360px; /* taller image */
+    display: flex;
+    align-items: center; /* center vertically */
+    justify-content: center;
+    padding: 1rem;
+  }
+  .news-banner-btn {
+    position: relative; /* remove absolute so it stays centered inside flex */
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  /* Make inner service button look correct on mobile: centered and a fixed width */
+  .news-banner-btn .service-btn {
+    display: inline-block;
+    width: auto;
+    padding: 0.75em 2em;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+}
+
+/* Ensure the inner visible button responds to hover/focus/active on mobile too */
+@media (max-width: 900px) {
+  .news-banner-btn:hover .service-btn,
+  .news-banner-btn:focus .service-btn,
+  .news-banner-btn:active .service-btn {
+    background: #368bb1;
+  }
+}
+
+/* Desktop explicit: ensure the button is absolute-centered on large screens */
+@media (min-width: 901px) {
+  .news-banner-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+}
+
+/* Desktop: center the anchor and style the inner visible button */
+@media (min-width: 901px) {
+  .news-banner-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    background: transparent;
+    padding: 0;
+    display: block;
+  }
+
+  .news-banner-btn .service-btn {
+    background: #43a3d3;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.75em 2em;
+    font-weight: 700;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+
+}
+
+/* When the anchor is hovered/focused, style the inner visible button (desktop) */
+@media (min-width: 901px) {
+  .news-banner-btn:hover .service-btn,
+  .news-banner-btn:focus .service-btn {
+    background: #368bb1;
+  }
 }
 @media (max-width: 1100px) {
     .news-banner {
@@ -654,7 +769,7 @@ footer a:focus {
 }
 
 .news-banner-image-bg {
-  background: url('Files/002.webp') center center/cover no-repeat, #e0e6ed;
+  /* visual wrapper/overlay only — background is applied by .news-banner-right */
   position: relative;
   width: 100%;
   height: 100%;
@@ -672,10 +787,8 @@ footer a:focus {
   border-radius: 8px;
   z-index: 1;
 }
-.news-banner-image-bg .service-btn {
-  z-index: 2;
-  position: relative;
-}
+/* .news-banner-image-bg no longer directly styles .service-btn; use
+   .news-banner-btn .service-btn (desktop) and base .service-btn for visuals */
 
 .carousel-overlay-ukas {
   position: absolute;

@@ -184,12 +184,15 @@
       if (focusables.length) focusables[0].focus();
 
       // Preserve scroll position and lock the body without changing layout
-      savedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${savedScrollY}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.width = '100%';
+      // Only lock if not already locked to avoid clobbering any existing state
+      if (document.body.style.position !== 'fixed') {
+        savedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.width = '100%';
+      }
     }
     function closeNav(){
       if (!panel.classList.contains('open')) return; // already closed
@@ -252,10 +255,16 @@
 
     function handleResize(){
       if (window.innerWidth > 800){
-        // close panel and restore body styles to avoid scrollbar disappearance
-        closeNav();
-        // ensure any body locking remnants are cleared
-        restoreBodyScroll();
+        // If the panel was open, close it (closeNav will restore scroll from savedScrollY).
+        if (panel.classList.contains('open')) {
+          closeNav();
+        } else {
+          // Only restore body scroll if the body was locked or we have a saved position.
+          // This avoids overriding the browser's native scroll restoration on page load.
+          if (document.body.style.position === 'fixed' || savedScrollY) {
+            restoreBodyScroll();
+          }
+        }
         // explicitly hide the hamburger on desktop
         try { btn.style.display = 'none'; } catch(e){}
       } else {
