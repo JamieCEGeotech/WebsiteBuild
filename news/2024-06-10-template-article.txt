@@ -1,7 +1,7 @@
 ---
 title: "Template News Article"
 date: "2024-06-10"
-image: "Files/002.jpg"
+image: "Files/002.webp"
 category: "General"
 ---
 
@@ -16,4 +16,4 @@ This is a template for a CE Geotech news article. You can write your content her
 
 Feel free to add images, links, and more sections as needed.
 
-![Optional caption](Files/002.jpg)
+![Optional caption](Files/002.webp)
