@@ -24,11 +24,17 @@
     <meta name="twitter:title" content="Client Portal - CE Geotech">
     <meta name="twitter:description" content="Access the CE Geotech Client Portal for project data, GIS mapping, and secure document sharing.">
     <meta name="twitter:image" content="https://jamiecegeotech.github.io/WebsiteBuild/Files/Geotech%20logo%20+%20Tagline%20RGB%20300px.webp">
+    <link rel="canonical" href="https://jamiecegeotech.github.io/WebsiteBuild/ClientPortal.html">
+    <style>
+      .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+      .skip-link:focus, .skip-link:active{position:static;left:0;width:auto;height:auto;padding:0.5rem 1rem;background:#000;color:#fff;z-index:1000}
+    </style>
 </head>
 <body>
     <!-- Cookie Consent -->
     <script src="cookie-consent.js?v=1"></script>
 
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
     <!-- Top blue bar -->
     <div class="top-bar d-flex justify-content-end align-items-center" style="height:45px;">
         <a href="contact.html" class="top-bar-contact-btn btn btn-primary rounded me-5">Contact us</a>
@@ -47,7 +53,7 @@
                     </picture>
                 </a>
             </div>
-            <nav class="header-nav d-flex gap-3">
+            <nav class="header-nav d-flex gap-3" role="navigation" aria-label="Main navigation">
                 <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">What We Do</a>
                 <a class="nav-link px-2" href="news.html">News</a>
                 <a class="nav-link px-2 active" href="ClientPortal.html">Client Portal</a>
@@ -56,7 +62,7 @@
         </div>
     </header>
 
-    <main class="section fade-in py-5" id="client-portal">
+    <main class="section fade-in py-5" id="main" role="main">
         <div class="container">
             <h1 class="mb-4 text-center">Client Portal</h1>
             <div class="row justify-content-center">
@@ -96,7 +102,7 @@
                         </picture>
                     </div>
                     <div class="fw-bold mb-2">21581</div>
-                    <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
+                    <a href="Files/21581Testing Multiple.pdf" title="View accreditation certificate (PDF)">View accreditation certificate (PDF)</a>
                 </div>
                 <!-- Contact Us (Right) -->
                 <div class="col-md-4 text-center text-md-start">
@@ -105,10 +111,10 @@
                         <div>T: (+44) 01629 584 416</div>
                         <div>
                             E: 
-                            <a href="mailto:enquiries@cegeotech.co.uk" class="fw-bold" style="color: #43a3d3; text-decoration: none;" target="_blank">enquiries@cegeotech.co.uk</a>
+                            <a href="mailto:enquiries@cegeotech.co.uk" class="fw-bold" style="color: #43a3d3; text-decoration: none;">enquiries@cegeotech.co.uk</a>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block mt-2">
+                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" rel="noopener noreferrer" class="d-inline-block mt-2">
                         <picture>
                             <source srcset="Files/LinkedIn_icon.svg.webp" type="image/webp">
                             <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" class="linkedin-icon" width="32" height="32">

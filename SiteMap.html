@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="style.css?v=" id="main-css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="Files/BrowserIcon_Transparent.png">
+        <link rel="canonical" href="https://jamiecegeotech.github.io/WebsiteBuild/SiteMap.html">
+        <style>
+            .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+            .skip-link:focus, .skip-link:active{position:static;left:0;width:auto;height:auto;padding:0.5rem 1rem;background:#000;color:#fff;z-index:1000}
+        </style>
 </head>
-<body>
+    <body>
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
     <script src="cookie-consent.js?v=1"></script>
     <!-- Top blue bar -->
     <div class="top-bar d-flex justify-content-end align-items-center" style="height:45px;">
@@ -25,7 +31,7 @@
                                         </picture>
                 </a>
             </div>
-            <nav class="header-nav d-flex gap-3">
+            <nav class="header-nav d-flex gap-3" role="navigation" aria-label="Primary navigation">
                 <a class="nav-link px-2" href="LaboratoryMixDesignStudiesBootstrap.html">What We Do</a>
                 <a class="nav-link px-2" href="news.html">News</a>
                 <a class="nav-link px-2" href="ClientPortal.html">Client Portal</a>
@@ -34,7 +40,7 @@
         </div>
     </header>
 
-    <main class="section fade-in py-5" style="max-width: 800px; margin: 0 auto;">
+    <main id="main" class="section fade-in py-5" style="max-width: 800px; margin: 0 auto;">
         <h1 class="mb-4">Site Map</h1>
         <ul style="font-size: 1.15em; line-height: 2;">
             <li>
@@ -51,14 +57,10 @@
                     </li>
                     <li><a href="SiteMap.html">Site Map</a></li>
                     <li>
-                        <a href="Files/CE GeoTech Cap Stat Overview 12pp v3.indd.pdf" target="_blank">
-                            Capability Statement (PDF)
-                        </a>
+                        <a href="Files/CE GeoTech Cap Stat Overview 12pp v3.indd.pdf" target="_blank" rel="noopener noreferrer" title="Download CE Geotech Capability Statement (PDF)">Capability Statement (PDF)</a>
                     </li>
                     <li>
-                        <a href="Files/21581Testing Multiple.pdf" target="_blank">
-                            UKAS Accreditation Certificate (PDF)
-                        </a>
+                        <a href="Files/21581Testing Multiple.pdf" target="_blank" rel="noopener noreferrer" title="View UKAS Accreditation Certificate (PDF)">UKAS Accreditation Certificate (PDF)</a>
                     </li>
                     <li>
                         <a href="privacy-policy.html">Privacy Policy</a>
@@ -85,7 +87,7 @@
                         <img src="Files/UKAS Accreditation Symbol - black on white - Testing.jpg" alt="Accreditation Logo" class="img-fluid accreditation-logo">
                     </div>
                     <div class="fw-bold mb-2">21581</div>
-                    <a href="Files/21581Testing Multiple.pdf">Click here to view</a>
+                    <a href="Files/21581Testing Multiple.pdf" title="View accreditation certificate (PDF)">View accreditation certificate (PDF)</a>
                 </div>
                 <!-- Contact Us (Right) -->
                 <div class="col-md-4 text-center text-md-start">
@@ -94,10 +96,10 @@
                         <div>T: (+44) 01629 584 416</div>
                         <div>
                             E: 
-                            <a href="mailto:enquiries@cegeotech.co.uk" class="fw-bold" style="color: #43a3d3; text-decoration: none;" target="_blank">enquiries@cegeotech.co.uk</a>
+                            <a href="mailto:enquiries@cegeotech.co.uk" class="fw-bold" style="color: #43a3d3; text-decoration: none;">enquiries@cegeotech.co.uk</a>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" class="d-inline-block mt-2">
+                    <a href="https://www.linkedin.com/company/cegeotech/" target="_blank" rel="noopener noreferrer" class="d-inline-block mt-2" title="Visit our LinkedIn profile">
                         <img src="Files/LinkedIn_icon.svg.webp" alt="LinkedIn" class="linkedin-icon">
                     </a>
                 </div>
