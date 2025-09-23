@@ -308,6 +308,16 @@ nav a:focus {
     }
 }
 
+/* Center footer logo on small screens */
+@media (max-width: 768px) {
+  .footer-logo {
+    display: block;
+    margin: 0 auto; /* center */
+    text-align: center;
+    max-height: 80px;
+  }
+}
+
 /* ====== Service Fade Cards ====== */
 .service-fade-card {
     position: relative;
@@ -798,6 +808,114 @@ img.carousel-overlay-ukas {
 }
 
 /* Make Bootstrap carousel transitions slower */
+
+/* ====== Mobile Navigation ====== */
+/* Hide the hamburger by default (desktop). It's shown under the mobile media query. */
+.hamburger-btn { display: none; }
+
+/* Hide the regular header nav on small screens and show a hamburger button */
+@media (max-width: 800px) {
+  .header-inner {
+    padding: 0 1rem;
+  }
+  .header-nav {
+    display: none !important; /* hide desktop nav on small screens */
+  }
+
+  /* Show the hamburger only on small screens */
+  .hamburger-btn { display: inline-flex; }
+
+  /* Hamburger button (injected by JS) */
+  .hamburger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.06);
+    cursor: pointer;
+  }
+
+  .hamburger-icon {
+    width: 22px;
+    height: 2px;
+    background: #222;
+    position: relative;
+    transition: transform .2s ease;
+  }
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: #222;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+  .hamburger-icon::before { top: -7px; }
+  .hamburger-icon::after { top: 7px; }
+
+  /* Slide-in panel */
+  .mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    right: -320px; /* hidden by default */
+    width: 320px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -6px 0 24px rgba(0,0,0,0.12);
+    z-index: 2200;
+    transition: right .28s cubic-bezier(.2,.8,.2,1);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  .mobile-nav-panel.open { right: 0; }
+
+  /* Overlay behind panel */
+  .mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 2100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+  }
+  .mobile-nav-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-nav-panel .nav-link {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: #222;
+    font-weight: 700;
+  }
+  .mobile-nav-panel .nav-link:last-child { border-bottom: none; }
+  .mobile-nav-panel .header-contact-btn {
+    margin-top: 1rem;
+    width: 100%;
+    display: inline-block;
+  }
+
+  /* When hamburger toggled to close state (X) */
+  .hamburger-btn[aria-expanded="true"] .hamburger-icon {
+    transform: rotate(45deg);
+  }
+  .hamburger-btn[aria-expanded="true"] .hamburger-icon::before {
+    transform: rotate(-90deg) translateX(-7px);
+  }
+  .hamburger-btn[aria-expanded="true"] .hamburger-icon::after {
+    opacity: 0;
+  }
+}
 .carousel-item {
   transition: transform 3s cubic-bezier(.4,0,.2,1), opacity 2s cubic-bezier(.4,0,.2,1);
 }
