@@ -1032,3 +1032,18 @@ img.carousel-overlay-ukas {
 .carousel-item {
   transition: transform 3s cubic-bezier(.4,0,.2,1), opacity 2s cubic-bezier(.4,0,.2,1);
 }
+
+/* Desktop: ensure mobile nav panel and overlay are hidden to avoid showing
+   menu items under footer or other content when viewport is large. Mobile
+   JS will display these when needed. */
+@media (min-width: 801px) {
+  .mobile-nav-panel {
+    display: none !important;
+    right: -9999px !important;
+  }
+  .mobile-nav-overlay {
+    display: none !important;
+  }
+  /* Hide hamburger button explicitly on desktop to avoid visual artifacts */
+  .hamburger-btn { display: none !important; }
+}
