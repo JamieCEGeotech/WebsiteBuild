@@ -7,7 +7,8 @@ window.injectCookieConsent = function(options = {}) {
 
   // Allow custom privacy link and text via options
   const privacyLink = options.privacyLink || 'privacy-policy.html';
-  const privacyText = options.privacyText || 'Learn more';
+  // Use a descriptive default link text so screen readers and crawlers understand the destination
+  const privacyText = options.privacyText || 'Read our Privacy Policy';
 
   // Modal HTML
   const modalHtml = `
@@ -32,9 +33,9 @@ window.injectCookieConsent = function(options = {}) {
                 <button type="button" class="btn btn-secondary" id="cookie-reject">Reject All</button>
                 <button type="button" class="btn btn-primary" id="cookie-accept">Accept Selected</button>
             </div>
-            <div class="mt-3">
-                <a href="${privacyLink}" class="text-decoration-underline">${privacyText}</a>
-            </div>
+      <div class="mt-3">
+        <a href="${privacyLink}" class="text-decoration-underline" title="${privacyText}" aria-label="${privacyText}">${privacyText}</a>
+      </div>
         </form>
     </div>
   `;
