@@ -508,11 +508,13 @@ nav a:focus {
     background: transparent;
 }
 .news-banner-right::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(67,163,211,0.18);
-    z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Match tint used elsewhere (hero images use a darker brightness filter).
+     Use a semi-transparent black overlay so the image darkens consistently. */
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
 }
 
 /* Mobile adjustments: taller image and centered button */
@@ -783,7 +785,8 @@ footer a:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(67,163,211,0.18);
+  /* Use the same darker overlay as .news-banner-right to match image tint across site */
+  background: rgba(0,0,0,0.45);
   border-radius: 8px;
   z-index: 1;
 }
