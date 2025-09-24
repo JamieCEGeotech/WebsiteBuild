@@ -481,7 +481,7 @@ nav a:focus {
   min-width: 220px;
   height: 100%;
   /* use the higher-quality webp variant for modern browsers */
-  background: url('Files/002.webp') center center/cover no-repeat, #e0e6ed;
+  background: url('Files/007.webp') center center/cover no-repeat, #e0e6ed;
   background-size: cover;
   border-radius: 8px;
   display: flex;
