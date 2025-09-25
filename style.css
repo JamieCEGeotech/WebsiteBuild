@@ -5,6 +5,22 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Prevent flashes of unstyled or mis-sized content while the page loads.
+   Add the class `is-loading` to <html> to hide content until the window load
+   event has fired. When loaded, `is-loaded` is added and `is-loading` removed. */
+html.is-loading {
+  background: #fff; /* avoid black/unstyled background */
+}
+html.is-loading body {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+html.is-loaded body {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: opacity 240ms ease-in;
+}
+
 
 body {
     font-family: 'Montserrat', Arial, sans-serif;
