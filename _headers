@@ -1,0 +1,21 @@
+# Netlify headers - caches everything under / for 1 year
+# NOTE: This sets Cache-Control for all paths under / to 1 year. Make sure you use
+# cache-busting (e.g. file fingerprinting or query string versioning) for assets
+# that change, or users may keep stale copies for up to 1 year.
+/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Safer alternative (commented out):
+# - Set long caching for static assets (images, css, js), and short/no cache for HTML
+# Uncomment and use instead of the rule above if you don't fingerprint files.
+#
+# /static/*
+#   Cache-Control: public, max-age=31536000, immutable
+# /Files/*
+#   Cache-Control: public, max-age=31536000, immutable
+# *.js
+#   Cache-Control: public, max-age=31536000, immutable
+# *.css
+#   Cache-Control: public, max-age=31536000, immutable
+# /*.html
+#   Cache-Control: public, max-age=3600
