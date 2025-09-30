@@ -1,0 +1,3 @@
+/* Minimal CSS to avoid white flashes between page navigations */
+:root{--page-fade-duration:260ms}
+.page-exiting body{opacity:0;transition:opacity var(--page-fade-duration) ease-in}
