@@ -22,5 +22,13 @@
     "category": "General",
     "summary": "This is a template for a CE Geotech news article. You can write your content here using Markdown.",
     "markdown": "news/2024-06-10-template-article.txt"
+  },
+  {
+    "title": "Ground Investigation Services You Can Build On",
+    "date": "2025-09-30",
+  "image": "Files/003.webp",
+    "category": "General",
+    "summary": "CE Geotech provides expert ground investigation services, including Phase 1 and Phase 2 site investigations, CBR testing, and foundation advice, to help clients build safely and confidently across the Midlands.",
+    "markdown": "news/2025-09-30-Article about CE Geotech.txt"
   }
 ]
